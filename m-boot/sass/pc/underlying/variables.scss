@@ -1,0 +1,100 @@
+// Fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 14px !default;
+$font-size-sm: ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-lg: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small: 80% !default;
+
+$font-weight-base: normal !default;
+$font-weight-bold: bold !default;
+
+// ling-height
+// 没有单位，相当于em
+$line-height-xs: 1.1 !default;
+$line-height-sm: 1.3 !default;
+$line-height-base: 1.428571429 !default; // 20/14
+$line-height-lg: 1.8 !default;
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+// margin
+$margin-xs: $line-height-computed / 4 !default; // 5px
+$margin-sm: $line-height-computed / 2 !default; // 10px
+$margin-base: $line-height-computed !default; // 20px
+$margin-lg: $line-height-computed * 1.5 !default; // 30px
+$margin-xl: $line-height-computed * 2 !default; // 40px
+
+// padding
+$padding-sym-xs: 0.1em !default;
+$padding-sym-sm: 0.25em !default;
+$padding-sym-base: 0.5em !default;
+$padding-sym-lg: 1em !default;
+$padding-sym-xl: 1.5em !default;
+
+$padding-asym-xs: 0.1em 0.2em !default;
+$padding-asym-sm: 0.25em 0.5em !default;
+$padding-asym-base: 0.5em 1em !default;
+$padding-asym-lg: 1em 2em !default;
+$padding-asym-xl: 1.5em 3em !default;
+
+// border-radius
+$border-radius-xs: 0.1em !default;
+$border-radius-sm: 0.2em !default;
+$border-radius-base: 0.3em !default;
+$border-radius-lg: 0.4em !default;
+$border-radius-xl: 1em !default;
+$border-radius-circle: 50% !default;
+
+//== z-index
+$zindex-navbar: 1000 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+//== layout
+$screens: (
+        xs: 480px,
+        sm: 768px,
+        md: 992px,
+        lg: 1200px
+) !default;
+$containers: (
+        xs: 100%,
+        sm: 750px,
+        md: 970px,
+        lg: 1170px
+) !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+//== Type-basic
+$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//== Type-code
+$pre-scrollable-max-height: 340px !default;
+
+//== Forms
+$input-height-small: floor($font-size-sm * $line-height-base) + strip-units($padding-sym-base) * $font-size-sm * 2 + 2 !default;
+$input-height-base: $line-height-computed + strip-units($padding-sym-base) * $font-size-base * 2 + 2 !default;
+$input-height-large: ceil($font-size-lg * $line-height-base) + strip-units($padding-sym-base) * $font-size-lg * 2 + 2 !default;
+
+// Modal
+$modal-lg: 900px !default;
+$modal-md: 600px !default;
+$modal-sm: 300px !default;
+
+//== Navbar
+$navbar-height: 50px !default;
+$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height: 340px !default;

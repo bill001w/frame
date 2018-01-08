@@ -1,0 +1,153 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.page-view {
+    flex: 1;
+    position: relative;
+    margin-bottom: -1px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    height: $navbar-height;
+    background-color: $navbar-bg;
+
+    &:after {
+        @include bottom-line($navbar-border-color, 2);
+    }
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: $navbar-height;
+
+    .navbar-title {
+        display: block;
+        width: 100%;
+        font-size: $navbar-center-fontsize;
+        text-align: center;
+        color: $navbar-center-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+    padding: 0 $padding-sym-base;
+    font-size: $navbar-item-fontsize;
+    color: $navbar-item-color;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:last-child {
+        justify-content: flex-end;
+    }
+
+    .back-ico:before, .next-ico:before {
+        display: block;
+        font-family: $iconfont-inlay;
+        font-size: $navbar-icon-fontsize;
+        color: $navbar-icon-color;
+    }
+    .back-ico:before {
+        content: '\e607';
+    }
+    .next-ico:before {
+        content: '\e608';
+    }
+}
+
+.tabbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: $base-zindex * 100;
+    width: 100%;
+    padding: $padding-asym-base;
+    background-color: $tabbar-bg;
+
+    &:after {
+        @include top-line($tabbar-border-color);
+    }
+
+    &.tabbar-fixed {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 49;
+    }
+}
+
+.tabbar-item {
+    flex: 1;
+    display: flex;
+    // 里面的元素垂直排列
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $tabbar-color;
+
+    &.tabbar-active {
+        color: $tabbar-color-active;
+
+        .tabbar-icon {
+            color: inherit;
+        }
+    }
+}
+
+.tabbar-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: $tabbar-icon-fontsize * 1.08;
+    color: $tabbar-icon-color;
+
+    *:before, *:after {
+        display: block;
+        font-size: $tabbar-icon-fontsize !important;
+    }
+}
+
+.tabbar-txt {
+    display: inline-block;
+    font-size: $tabbar-text-fontsize;
+}
+
+.tabbar-item .badge {
+    position: absolute;
+    top: -.02rem;
+    left: 100%;
+    z-index: 999;
+    margin-left: -.15rem;
+}
+
+.tabbar-dot {
+    display: block;
+    position: absolute;
+    top: .02rem;
+    left: 100%;
+    z-index: 999;
+    margin-left: -.11rem;
+    width: 10px;
+    height: 10px;
+    background-color: #EF4F4F;
+    border-radius: 50%;
+}

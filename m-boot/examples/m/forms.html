@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/sass/mobile/m-boot.css">
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <!--<script src="./lib/ydui.flexible.js"></script>-->
+    <script src="../../dist/sass/mobile/m-boot.js"></script>
+    <style>
+        .demo-icons-like:after {
+            content: '\e60d';
+        }
+    </style>
+</head>
+<body>
+<section class="page">
+    <div class="page-view" style="background-color: #fbf9fe;">
+        <h4 class="grids-title">表单</h4>
+        <div class="grids-1 grids-border">
+            <div class="grids-item">
+                <span class="cell-left">姓名</span>
+                <div class="cell-right"><input type="text" class="cell-input" placeholder="请输入姓名"></div>
+            </div>
+            <div class="grids-item">
+                <div class="cell-left">
+                    <i class="cell-icon demo-icons-like"></i><span>我的收藏</span>
+                </div>
+                <div class="cell-right cell-arrow"><span>我的收藏</span></div>
+            </div>
+            <div class="grids-item">
+                <div class="cell-left">
+                    <div class="cell-icon"><img src="../img/1.jpg" alt=""></div><span>性别</span>
+                </div>
+                <div class="cell-right">
+                    <select name="gender" id="" class="cell-select">
+                        <option value="">请选择</option>
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <h4 class="grids-title">单选</h4>
+        <div class="grids-1 grids-border">
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>单选一</span>
+                </div>
+                <label class="cell-right">
+                    <input type="radio" name="radio"><i class="cell-radio-icon"></i>
+                </label>
+            </div>
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>单选二</span>
+                </div>
+                <label class="cell-right">
+                    <input type="radio" name="radio"><i class="cell-radio-icon"></i>
+                </label>
+            </div>
+        </div>
+        <h4 class="grids-title">单选</h4>
+        <div class="grids-2 grids-border">
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>单选一</span>
+                </div>
+                <label class="cell-right">
+                    <input type="radio" name="radio"><i class="cell-radio-icon"></i>
+                </label>
+            </div>
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>单选二</span>
+                </div>
+                <label class="cell-right">
+                    <input type="radio" name="radio"><i class="cell-radio-icon"></i>
+                </label>
+            </div>
+        </div>
+        <h4 class="grids-title">多选</h4>
+        <div class="grids-1 grids-border">
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>多选一</span>
+                </div>
+                <label class="cell-right">
+                    <input type="checkbox" name="checkbox"><i class="cell-checkbox-icon"></i>
+                </label>
+            </div>
+            <div class="grids-item">
+                <div class="cell-left">
+                    <span>多选二</span>
+                </div>
+                <label class="cell-right">
+                    <input type="checkbox" name="checkbox"><i class="cell-checkbox-icon"></i>
+                </label>
+            </div>
+        </div>
+        <h4 class="grids-title">文本域</h4>
+        <div class="grids-1 grids-border">
+            <textarea name="textarea" id="textarea" class="cell-textarea"></textarea>
+        </div>
+        <h4 class="grids-title">复选框</h4>
+        <div class="grids-1 grids-border">
+           <div class="grids-item">
+               <div class="cell-left"><span>设为默认地址</span></div>
+               <div class="cell-right"><label for=""><input type="checkbox" class="switch"></label></div>
+           </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.grids-title {
+    position: relative;
+    margin: 0;
+    padding: $padding-sym-base $grid-gutter-width / 2 $padding-sym-sm;
+
+    &:after {
+        @include bottom-line($line-color);
+    }
+}
+
+%grids-common {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $margin-sm;
+    background-color: $body-bg;
+
+    a.grids-item,
+    label.grids-item {
+        @include tap-color(#FFF, .96);
+    }
+}
+
+%grids-border-common {
+    &:before {
+        @include bottom-line($grids-line-high-color);
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    .grids-#{$i} {
+        @extend %grids-common;
+    }
+
+    .grids-border.grids-#{$i} {
+        @extend %grids-border-common;
+    }
+}
+
+.grids-item {
+    position: relative;
+    display: flex;
+    flex: auto;
+    max-width: 100%;
+    padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
+    overflow: hidden;
+}
+
+@for $i from 1 through $grid-columns {
+    .grids-#{$i} {
+        .grids-item {
+            flex: 0 0 percentage(1 / $i);
+            // Add a `max-width` to ensure content within each column does not blow out
+            // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+            // do not appear to require this.
+            max-width: percentage(1 / $i);
+        }
+    }
+
+    .grids-border.grids-#{$i} {
+        .grids-item {
+            &:after {
+                @include bottom-line($grids-line-color);
+            }
+
+            // 考虑了换行的情况
+            &:not(:nth-child(#{$i + n})):before {
+                @include right-line($grids-line-color);
+            }
+        }
+    }
+}

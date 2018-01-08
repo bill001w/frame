@@ -1,0 +1,220 @@
+.cell {
+    position: relative;
+    z-index: 1;
+    margin-bottom: .35rem;
+    background-color: #FFF;
+    &:after {
+        @include bottom-line($line-high-color);
+    }
+    a.cell-item,
+    label.cell-item {
+        @include tap-color(#FFF, .96);
+    }
+}
+
+.cell-title {
+    position: relative;
+    z-index: 1;
+    padding: 0 $body-padding-vertical .1rem;
+    text-align: left;
+    font-size: $cell-title-fontsize;
+    color: $cell-title-color;
+
+    &:after {
+        @include bottom-line($line-color);
+    }
+}
+
+.cell-item {
+    display: flex;
+    position: relative;
+    padding-left: $body-padding-vertical;
+    overflow: hidden;
+    &:not(:last-child):after {
+        margin-left: $body-padding-vertical;
+        @include bottom-line($line-color);
+    }
+}
+
+.cell-left {
+    // 定义自己也为flex容器
+    display: flex;
+    align-items: center;
+    font-size: $cell-left-fontsize;
+    white-space: nowrap;
+    color: $cell-left-color;
+}
+
+.cell-icon {
+    display: block;
+    // 可能是before，也可能是after
+    &:before, &:after {
+        margin-right: .1rem;
+        font-size: $cell-icon-fontsize !important;
+        color: #A6A5A5;
+    }
+    img {
+        margin-right: .1rem;
+        height: .4rem;
+    }
+}
+
+.cell-right {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    min-height: $cell-height;
+    color: $cell-right-color;
+    text-align: right;
+    font-size: $cell-right-fontsize;
+    padding-right: $body-padding-vertical;
+    align-items: center;
+    justify-content: flex-end;
+
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="time"],
+    input[type="radio"],
+    input[type="checkbox"]:not(.switch) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="time"] {
+        line-height: $cell-height;
+    }
+    input[type="radio"],
+    input[type="checkbox"]:not(.switch) {
+        position: absolute;
+        left: -9999em;
+        & + .cell-radio-icon:after,
+        & + .cell-checkbox-icon:after {
+            font-family: $iconfont-inlay;
+            font-size: .44rem;
+        }
+        & + .cell-radio-icon:after {
+            content: '\e600';
+            color: #4CD864;
+            display: none;
+        }
+        & + .cell-checkbox-icon:after {
+            content: '\e604';
+            color: #D9D9D9;
+        }
+        &:checked {
+            & + .cell-radio-icon:after {
+                display: inline-block;
+            }
+            & + .cell-checkbox-icon:after {
+                color: #4CD864;
+                content: '\e601';
+            }
+        }
+    }
+    &:active {
+        background: none; /* for firefox */
+    }
+}
+
+.cell-arrow {
+    &:after {
+        content: '\e608';
+        display: block;
+        margin-left: .05rem;
+        margin-right: -.08rem;
+        // 是1个图标
+        font-family: $iconfont-inlay;
+        font-size: $cell-arrow-fontsize;
+        color: $cell-arrow-color;
+    }
+}
+
+.cell-input {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    height: $cell-height;
+    border: none;
+    text-align: left; /* fuck UC */
+    font-size: $cell-input-fontsize;
+    color: $cell-input-color;
+    background: transparent;
+}
+
+.cell-select {
+    display: block;
+    flex: 1;
+    margin-left: -.08rem; /* 去除select默认缩进 */
+    height: $cell-height;
+    border: none;
+    font-size: $cell-select-fontsize;
+    color: $cell-select-color;
+}
+
+.cell-textarea {
+    display: block; /* for old android */
+    width: 100%;
+    height: 1.5rem;
+    padding: .2rem 0;
+    border: none;
+}
+
+.switch {
+    display: block;
+    position: relative;
+    left: 0;
+    z-index: 2;
+    width: 52px;
+    height: 32px;
+    border: 1px solid #DFDFDF;
+    border-radius: 16px;
+    background-color: #DFDFDF;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        border-radius: 15px;
+        transition: transform .3s;
+    }
+    &:before {
+        width: 50px;
+        background-color: #FDFDFD;
+    }
+    &:after {
+        width: 30px;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    }
+    &:checked {
+        border-color: #4CD864;
+        background-color: #4CD864;
+        &:before {
+            transform: scale(0);
+        }
+        &:after {
+            transform: translateX(20px);
+        }
+    }
+
+}
+
+// 兼容firefox
+.switch-firefox {
+    &:checked + .switch {
+        border-color: #4CD864;
+        background-color: #4CD864;
+        &:before {
+            transform: scale(0);
+        }
+        &:after {
+            transform: translateX(20px);
+        }
+    }
+}

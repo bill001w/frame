@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icheck/skins/square/green.css">
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="./icheck/icheck.js"></script>
+</head>
+<body>
+<label>
+    <input type="checkbox" name="quux[1]" disabled>
+    Foo
+</label>
+
+<label for="baz[1]">Bar</label>
+<input type="radio" name="quux[2]" id="baz[1]" checked>
+
+<label for="baz[2]">Bar</label>
+<input type="radio" name="quux[2]" id="baz[2]">
+
+<script>
+    $(document).ready(function(){
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+            increaseArea: '50%' // optional
+        });
+    });
+</script>
+</body>
+</html>

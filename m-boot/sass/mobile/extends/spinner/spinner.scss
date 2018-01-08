@@ -1,0 +1,39 @@
+.spinner {
+    display: inline-block;
+    border: 1px solid #EAE8E8;
+    border-radius: 1px;
+    overflow: hidden;
+    > a {
+        float: left;
+        width: .6rem;
+        height: .6rem;
+        line-height: .62rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0;
+        color: #666;
+        @include tap-color(#F8F8F8, .95);
+        &:after {
+            font-family: $iconfont-inlay;
+            font-size: .18rem;
+            color: #777;
+        }
+        &:first-child:after {
+            content: '\E60B';
+        }
+        &:last-child:after {
+            content: '\E602'
+        }
+    }
+    > input {
+        float: left;
+        width: .85rem;
+        height: .6rem;
+        line-height: 2.7;
+        border: none;
+        font-size: .26rem;
+        text-align: center;
+        letter-spacing: 0;
+        color: #666;
+    }
+}

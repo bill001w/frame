@@ -1,0 +1,238 @@
+.container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+
+    &:extend(.clearfix all);
+}
+
+.make-row() {
+    margin-left: (@grid-gutter-width / -2);
+    margin-right: (@grid-gutter-width / -2);
+    &:extend(.clearfix all);
+}
+
+// 格栅系统共有样式
+.make-grid-columns() {
+    // 第1步
+    .col(@index) when (@index = 1) {
+        @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+        .col((@index + 1), @item);
+    }
+
+    // 第2步，接受第1步的@item，作为形参@list的值
+    // 然后反复调用自己11遍，合并@item传入第3步
+    .col(@index, @list) when (@index =< @grid-columns) {
+        @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+        .col((@index + 1), ~"@{list}, @{item}");
+    }
+
+    // 第3步，生成共有样式
+    .col(@index, @list) when (@index > @grid-columns) { // terminal
+        @{list} {
+            position: relative;
+            // Prevent columns from collapsing when empty
+            min-height: 1px;
+            padding-left: (@grid-gutter-width / 2);
+            padding-right: (@grid-gutter-width / 2);
+        }
+    }
+
+    // 入口
+    .col(1);
+}
+
+// 生成该media下的公共样式，不能和上面合并，可能是可以去掉float
+.float-grid-columns(@class) {
+    // 第1步
+    .col(@index) when (@index = 1) {
+        @item: ~".col-@{class}-@{index}";
+        .col((@index + 1), @item);
+    }
+    // 重复11遍
+    .col(@index, @list) when (@index =< @grid-columns) {
+        @item: ~".col-@{class}-@{index}";
+        .col((@index + 1), ~"@{list}, @{item}");
+    }
+    // 第3步，生成共有样式
+    .col(@index, @list) when (@index > @grid-columns) {
+        @{list} {
+            float: left;
+        }
+    }
+    // 入口
+    .col(1);
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+    .col-@{class}-@{index} {
+        width: percentage((@index / @grid-columns));
+    }
+}
+
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+    .calc-grid-column(@index, @class, @type);
+    .loop-grid-columns((@index - 1), @class, @type);
+}
+
+.make-grid(@class) {
+    .float-grid-columns(@class);
+    .loop-grid-columns(@grid-columns, @class, width);
+}
+
+.text-emphasis-variant(@color) {
+    color: @color;
+    a&:hover {
+        color: darken(@color, 10%);
+    }
+}
+
+.bg-variant(@color) {
+    background-color: @color;
+    a&:hover {
+        background-color: darken(@color, 10%);
+    }
+}
+
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.img-responsive(@display: block) {
+    display: @display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+    background-image: url("@{file-1x}");
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+}
+
+.table-row-variant(@state; @background) {
+    // Exact selectors below required to override `.table-striped` and prevent
+    // inheritance to nested tables.
+    .table > thead > tr,
+    .table > tbody > tr,
+    .table > tfoot > tr {
+        > td.@{state},
+        > th.@{state},
+        &.@{state} > td,
+        &.@{state} > th {
+            background-color: @background;
+        }
+    }
+
+    // Hover states for `.table-hover`
+    // Note: this is not available for cells or rows within `thead` or `tfoot`.
+    .table-hover > tbody > tr {
+        > td.@{state}:hover,
+        > th.@{state}:hover,
+        &.@{state}:hover > td,
+        &:hover > .@{state},
+        &.@{state}:hover > th {
+            background-color: darken(@background, 5%);
+        }
+    }
+}
+
+.form-control-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5) {
+    &.radio,
+    &.checkbox,
+    &.radio-inline,
+    &.checkbox-inline,
+    label {
+        color: @text-color;
+    }
+
+    .form-control {
+        border-color: @border-color;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        &:focus {
+            border-color: darken(@border-color, 10%);
+            @shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten(@border-color, 20%);
+            box-shadow: @shadow;
+        }
+    }
+
+    .form-control-feedback {
+        color: @text-color;
+    }
+}
+
+.form-control-focus(@color: @input-border-focus) {
+    @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+    &:focus {
+        border-color: @color;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px @color-rgba;
+    }
+}
+
+.input-size(@input-height; @line-height; @padding; @border-radius; @font-size) {
+    height: @input-height;
+    padding: @padding;
+    line-height: @line-height;
+    border-radius: @border-radius;
+    font-size: @font-size;
+
+    select& {
+        height: @input-height;
+        line-height: @input-height;
+    }
+
+    textarea&,
+    select[multiple] & {
+        height: auto;
+    }
+}
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: darken(@background, 10%);
+        border-color: darken(@border, 12%);
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+.button-size(@padding; @line-height; @border-radius; @font-size) {
+    padding: @padding;
+    line-height: @line-height;
+    border-radius: @border-radius;
+    font-size: @font-size;
+}

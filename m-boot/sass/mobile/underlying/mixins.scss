@@ -1,0 +1,317 @@
+// 按下去背景颜色
+// -----------------------------------------------------------------------------
+@mixin tap-color($color, $opacity: .9) {
+    background-color: $color;
+    &:active {
+        background-color: $color * $opacity;
+    }
+}
+
+// 遮罩层
+// -----------------------------------------------------------------------------
+@mixin mask($bgcolor: rgba(0, 0, 0, .4), $z-index: $base-zindex * 1500) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: $z-index;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: $bgcolor;
+}
+
+// 多行文本溢出显示省略号
+// -----------------------------------------------------------------------------
+@mixin line-clamp($line: 2, $line-height: .38rem) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    line-height: $line-height;
+    max-height: $line-height * $line + .2rem;
+}
+
+// 单行文本溢出显示省略号
+// -----------------------------------------------------------------------------
+@mixin text-overflow($align: justify) {
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: $align;
+}
+
+// 三角形箭头
+// -----------------------------------------------------------------------------
+// $deg:  45deg - right
+//       135deg - down
+//       -45deg - up
+//      -135deg - left
+// ------------------------------------------------------------------------
+@mixin arrow($color: #DDD, $width: .2rem, $border-width: 2px, $deg: 45deg) {
+    content: '';
+    display: inline-block;
+    width: $width;
+    height: $width;
+    border-style: solid;
+    border-color: $color;
+    border-width: $border-width $border-width 0 0;
+    transform: rotate($deg);
+}
+
+// 一像素边框
+// -----------------------------------------------------------------------------
+@mixin top-line($color) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid $color;
+    transform: scaleY(.5);
+    transform-origin: 0 0;
+}
+
+@mixin bottom-line($color) {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid $color;
+    transform: scaleY(.5);
+    transform-origin: 0 100%;
+}
+
+@mixin left-line($color) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-left: 1px solid $color;
+    transform: scaleX(.5);
+    transform-origin: 0 0;
+}
+
+@mixin right-line($color) {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-right: 1px solid $color;
+    transform: scaleX(.5);
+    transform-origin: 100% 0;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    // IE8 filter
+    $opacity-ie: ($opacity * 100);
+    filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin tab-focus() {
+    // Default
+    outline: thin dotted;
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+@mixin text-emphasis-variant($elem, $color) {
+    #{$elem} {
+        color: $color !important;
+    }
+    a#{$elem}:hover {
+        color: darken($color, 10%) !important;
+    }
+}
+
+@mixin bg-variant($elem, $color) {
+    #{$elem} {
+        background-color: $color !important;
+    }
+    a#{$elem}:hover {
+        background-color: darken($color, 10%) !important;
+    }
+}
+
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+    background-image: url($file-1x);
+
+    @media only screen and (min-resolution: 192dpi), // IE9-11 don't support dppx
+    only screen and (min-resolution: 2dppx) { // Standardized
+        background-image: url($file-2x);
+        background-size: $width-1x $height-1x;
+    }
+}
+
+@mixin table-row-variant($state, $background) {
+    .table > thead > tr,
+    .table > thead > tr,
+    .table > tbody > tr,
+    .table > tfoot > tr {
+        > td.#{$state},
+        > th.#{$state},
+        &.#{$state} > td,
+        &.#{$state} > th {
+            background-color: $background;
+        }
+    }
+
+    .table-hover > tbody > tr {
+        > td.#{$state}:hover,
+        > th.#{$state}:hover,
+        &.#{$state}:hover > td,
+        &:hover > .#{$state},
+        &.#{$state}:hover > th {
+            background-color: darken($background, 5%);
+        }
+    }
+}
+
+@mixin form-control-validation($color) {
+    &.radio,
+    &.checkbox,
+    &.radio-inline,
+    &.checkbox-inline,
+    label {
+        color: $color;
+    }
+
+    .form-control {
+        border-color: $color;
+        background-color: rgba($color, .25);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        &:focus {
+            border-color: darken($color, 10%);
+            $shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($color, 20%);
+            box-shadow: $shadow;
+        }
+    }
+
+    .form-control-feedback {
+        color: $color;
+    }
+
+}
+
+@mixin form-control-focus($color: $input-border-focus) {
+    $color-rgba: rgba(red($color), green($color), blue($color), .6);
+    &:focus {
+        border-color: $color;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
+    }
+}
+
+@mixin input-size($input-height,$line-height,$padding,$border-radius,$font-size) {
+    height: $input-height;
+    padding: $padding;
+    line-height: $line-height;
+    border-radius: $border-radius;
+    font-size: $font-size;
+
+    @at-root {
+        select#{&} {
+            height: $input-height;
+            line-height: $input-height;
+        }
+
+        textarea#{&},
+        select[multiple] & {
+            height: auto;
+        }
+    }
+}
+
+@mixin button-size($padding,$line-height,$border-radius,$font-size) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+@mixin button-variant($color) {
+    @include color-yiq($color);
+    $background: $color;
+    $border: $color;
+    $active-background: darken($background, 7.5%);
+    $active-border: darken($border, 10%);
+
+    background-color: $background;
+    border-color: $border;
+
+    &:hover {
+        @include color-yiq($background);
+        background-color: $active-background;
+        border-color: $active-border;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 3px rgba($border, .5);
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        border-color: $border;
+        background-color: transparent;
+    }
+
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+        @include color-yiq($color);
+        background-color: $active-background;
+        background-image: none; // Remove the gradient for the pressed/active state
+        border-color: $active-border;
+    }
+}
+
+@mixin button-outline-variant($color, $color-hover: #fff) {
+    color: $color;
+    background-color: transparent;
+    background-image: none;
+    border-color: $color;
+
+    &:hover {
+        color: $color-hover;
+        background-color: $color;
+        border-color: $color;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 3px rgba($color, .5);
+    }
+
+    &.disabled,
+    &:disabled {
+        color: $color;
+        background-color: transparent;
+    }
+
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+        color: $color-hover;
+        background-color: $color;
+        border-color: $color;
+    }
+}

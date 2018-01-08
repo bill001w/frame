@@ -1,0 +1,13 @@
+html {
+    // bootstrap 3 中的设置
+    font-size: 10px;
+}
+
+body {
+    line-height: $line-height-base;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: $body-color;
+    background-color: $body-bg;
+}

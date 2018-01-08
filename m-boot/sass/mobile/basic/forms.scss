@@ -1,0 +1,240 @@
+/* 重置样式 */
+label {
+    display: inline-block;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="search"] {
+    box-sizing: border-box;
+}
+
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+        cursor: not-allowed;
+    }
+}
+
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned.
+// As a workaround, we set a pixel line-height that matches the
+// given height of the input. Since this fucks up everything else, we have to
+// appropriately reset it for Internet Explorer and the size variations.
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    line-height: $line-height-base;
+}
+
+input[type="datetime-local"],
+input[type="date"],
+input[type="time"],
+input[type="radio"],
+input[type="checkbox"]:not(.switch) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+output {
+    display: block;
+    line-height: $line-height-base;
+    padding-top: $padding-sym-base;
+    font-size: $font-size-base;
+    color: $input-color;
+}
+
+// 左边说明文字
+.cell-left {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.cell-right {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: right;
+    color: $cell-right-color;
+    &:active {
+        background: none; /* for firefox */
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]:not(.switch) {
+        position: absolute;
+        left: -9999em;
+        & + .cell-radio-icon:after,
+        & + .cell-checkbox-icon:after {
+            font-family: $iconfont-inlay;
+            font-size: .55rem;
+        }
+        & + .cell-radio-icon:after {
+            content: '\e600';
+            color: #4CD864;
+            display: none;
+        }
+        & + .cell-checkbox-icon:after {
+            content: '\e604';
+            color: #D9D9D9;
+        }
+        &:checked {
+            & + .cell-radio-icon:after {
+                display: inline-block;
+            }
+            & + .cell-checkbox-icon:after {
+                color: #4CD864;
+                content: '\e601';
+            }
+        }
+    }
+}
+
+.cell-icon {
+    display: block;
+    // 可能是before，也可能是after
+    &:before, &:after {
+        margin-right: .1rem;
+        font-size: $cell-icon-fontsize !important;
+        color: #A6A5A5;
+    }
+    img {
+        margin-right: $margin-xs;
+        height: 0.6rem;
+    }
+}
+
+.cell-arrow {
+    &:after {
+        content: '\e608';
+        display: block;
+        margin-left: .05rem;
+        margin-right: -.08rem;
+        // 是1个图标
+        font-family: $iconfont-inlay;
+        font-size: $cell-arrow-fontsize;
+    }
+}
+
+.cell-left span,
+.cell-right span {
+    line-height: $line-height-base;
+    padding: $padding-sym-base 0;
+}
+
+.cell-input {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    line-height: $line-height-base;
+    padding: $padding-sym-base;
+    border: none;
+    text-align: left; /* fuck UC */
+    background: transparent;
+}
+
+.cell-select {
+    display: block;
+    flex: 1;
+    line-height: $line-height-base;
+    padding: $padding-sym-base;
+    border: none;
+}
+
+.cell-textarea {
+    display: block; /* for old android */
+    width: 100%;
+    height: 2rem;
+    padding: $padding-sym-base $grid-gutter-width / 2;
+    border: none;
+}
+
+.switch {
+    display: block;
+    position: relative;
+    left: 0;
+    z-index: 2;
+    width: 52px;
+    height: 32px;
+    border: 1px solid #DFDFDF;
+    border-radius: 16px;
+    background-color: #DFDFDF;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        border-radius: 15px;
+        transition: transform .3s;
+    }
+    &:before {
+        width: 50px;
+        background-color: #FDFDFD;
+    }
+    &:after {
+        width: 30px;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    }
+    &:checked {
+        border-color: #4CD864;
+        background-color: #4CD864;
+        &:before {
+            transform: scale(0);
+        }
+        &:after {
+            transform: translateX(20px);
+        }
+    }
+
+}
+
+// 兼容firefox
+.switch-firefox {
+    &:checked + .switch {
+        border-color: #4CD864;
+        background-color: #4CD864;
+        &:before {
+            transform: scale(0);
+        }
+        &:after {
+            transform: translateX(20px);
+        }
+    }
+}

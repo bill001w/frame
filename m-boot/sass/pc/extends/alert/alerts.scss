@@ -1,0 +1,29 @@
+.alert {
+    margin-bottom: $line-height-computed;
+    padding: $padding-sym-lg;
+    border: 1px solid transparent;
+    border-radius: $border-radius-base;
+
+    h4 {
+        margin-top: 0;
+        // Specified for the h4 to prevent conflicts of changing $headings-color
+        color: inherit;
+    }
+    > p,
+    > ul {
+        margin-bottom: 0;
+    }
+    > p + p {
+        margin-top: 5px;
+    }
+}
+
+.alert-dismissable {
+    @include close-dismissable(strip-units($padding-sym-lg)* $font-size-base);
+}
+
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        @include alert-variant(theme-color-level($color, -10), theme-color-level($color, -9), theme-color-level($color, 6));
+    }
+}

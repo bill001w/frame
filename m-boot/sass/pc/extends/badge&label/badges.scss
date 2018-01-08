@@ -1,0 +1,9 @@
+.badge {
+    @include badge-label($padding-sym-sm, 10em);
+}
+
+@each $color, $value in $theme-colors {
+    .badge-#{$color} {
+        @include badge-label-variant($value);
+    }
+}

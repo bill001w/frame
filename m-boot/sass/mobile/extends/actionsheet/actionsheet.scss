@@ -1,0 +1,36 @@
+.actionsheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-actionsheet;
+    width: 100%;
+    text-align: center;
+    background-color: $actionsheet-bg;
+    transform: translate(0, 100%);
+    transition: transform .3s;
+}
+
+.actionsheet-item {
+    display: block;
+    position: relative;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+    color: $actionsheet-item-color;
+    background-color: $actionsheet-item-bg;
+    &:after {
+        @include bottom-line($actionsheet-item-border-color, 2);
+    }
+}
+
+.actionsheet-action {
+    display: block;
+    margin-top: .15rem;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+    color: $actionsheet-action-color;
+    background-color: $actionsheet-action-bg;
+}
+
+.actionsheet-toggle {
+    transform: translate(0, 0);
+}

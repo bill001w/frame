@@ -1,0 +1,129 @@
+.modal-open {
+    overflow: hidden;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal;
+    overflow: auto;
+    overflow-y: scroll;
+    // Prevent Chrome on Windows from adding a focus outline. For details, see
+    // https://github.com/twbs/bootstrap/pull/10951.
+    outline: 0;
+    -webkit-overflow-scrolling: touch;
+
+    // modal-dialog的从-25%到0的进入动画效果
+    &.fade .modal-dialog {
+        transform: translate3d(0, -25%, 0);
+        transition: transform 0.3s ease-out;
+    }
+    &.in .modal-dialog {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+.modal-content {
+    position: relative;
+    border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+    border: 1px solid $modal-content-border-color;
+    border-radius: $border-radius-lg;
+    background-color: $modal-content-bg;
+    background-clip: padding-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    // Remove focus outline from opened modal
+    outline: 0;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal-background;
+    background-color: $modal-backdrop-bg;
+
+    &.fade {
+        @include opacity(0);
+    }
+    &.in {
+        @include opacity($modal-backdrop-opacity);
+    }
+}
+
+.modal-header {
+    padding: $padding-sym-base;
+    min-height: (strip-units($padding-sym-base) * $font-size-base + $line-height-computed);
+    border-bottom: 1px solid $modal-header-border-color;
+
+    @include close-dismissable(strip-units($padding-sym-base) * $font-size-base);
+}
+
+.modal-title {
+    margin: 0;
+    line-height: $line-height-base;
+}
+
+.modal-body {
+    position: relative;
+    padding: $margin-sm;
+}
+
+.modal-footer {
+    padding: $margin-sm;
+    border-top: 1px solid $modal-footer-border-color;
+    text-align: right;
+
+    .btn + .btn {
+        margin-left: $margin-xs;
+        margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+    }
+    // 覆盖上面的重写样式
+    .btn-group .btn + .btn {
+        margin-left: -1px;
+    }
+    // 覆盖上面的重写样式
+    .btn-block + .btn-block {
+        margin-left: 0;
+    }
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+@include media-breakpoint-up('sm') {
+    .modal-dialog {
+        width: $modal-md;
+        margin: 30px auto;
+    }
+
+    .modal-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+
+    .modal-sm {
+        width: $modal-sm;
+    }
+}
+
+@include media-breakpoint-up('md') {
+    .modal-lg {
+        width: $modal-lg;
+    }
+}

@@ -1,0 +1,196 @@
+table {
+    // 默认占满1行
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $margin-base;
+    background-color: $table-bg;
+    // 每个单元格样式
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: $padding-sym-base;
+                line-height: $line-height-base;
+                vertical-align: top;
+            }
+        }
+    }
+    > thead > tr > th {
+        vertical-align: bottom;
+    }
+}
+
+th {
+    text-align: left;
+}
+
+.table {
+    // 默认占满1行
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $margin-base;
+    // 每个单元格样式
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: $padding-sym-base;
+                line-height: $line-height-base;
+                vertical-align: top;
+                border-top: 1px solid $table-border-color;
+            }
+        }
+    }
+    > tbody:last-child {
+        > tr:last-child {
+            td {
+                border-bottom: 1px solid $table-border-color;
+            }
+        }
+    }
+    // 表头下面有2px的border
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid $table-border-color;
+    }
+    // 默认表格顶部不显示边框
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+    > tbody + tbody {
+        border-top: 2px solid $table-border-color;
+    }
+    // 表格嵌套
+    .table {
+        background-color: $table-bg;
+    }
+}
+
+// 更紧致的表格，就是padding减小了，但line-height不变
+.table-condensed {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: $padding-sym-sm;
+            }
+        }
+    }
+}
+
+// 边框型，就是给每个td/th加上边框
+.table-bordered {
+    // 表格自身也要有border
+    border: 1px solid $table-border-color;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: 1px solid $table-border-color;
+            }
+        }
+    }
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
+
+.table-striped {
+    > tbody > tr:nth-child(odd) {
+        > td,
+        > th {
+            background-color: $table-bg-accent;
+        }
+    }
+}
+
+.table-hover {
+    > tbody > tr:hover {
+        > td,
+        > th {
+            background-color: $table-bg-hover;
+        }
+    }
+}
+
+// 外面的div嵌套的table，利用外面div滚动条实现
+.table-responsive {
+    margin-bottom: $margin-base;
+    width: 100%;
+    border: 1px solid $table-border-color;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+
+    > .table {
+        margin-bottom: 0;
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > th,
+                > td {
+                    // 均不允许折叠
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    // 去掉表格自身的border和那些重合的border
+    > .table-bordered {
+        border: 0;
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > th:first-child,
+                > td:first-child {
+                    border-left: 0;
+                }
+                > th:last-child,
+                > td:last-child {
+                    border-right: 0;
+                }
+            }
+        }
+
+        // 去掉最后1行的底部border
+        > tbody,
+        > tfoot {
+            > tr:last-child {
+                > th,
+                > td {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    @include table-row-variant($color, theme-color-level($color, -9));
+}
+
+@include table-row-variant(active, $table-bg-active);

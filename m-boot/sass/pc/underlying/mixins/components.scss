@@ -1,0 +1,159 @@
+@mixin badge-label($padding, $border-radius) {
+    display: inline-block;
+    // 解决垂直对齐问题
+    position: relative;
+    top: -1px;
+    margin-left: 4px;
+    padding: $padding;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: $border-radius;
+    color: $badge-label-color;
+    font-size: 75%;
+    white-space: nowrap;
+
+    &:empty {
+        display: none;
+    }
+    @at-root {
+        a#{&} {
+            &:hover,
+            &:focus {
+                color: $badge-label-link-hover-color;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+@mixin badge-label-variant($color) {
+    background-color: $color;
+
+    &[href] {
+        &:hover,
+        &:focus {
+            background-color: darken($color, 10%);
+        }
+    }
+}
+
+@mixin list-group-item-variant($state, $background, $color) {
+    .list-group-item-#{state} {
+        color: $color;
+        background-color: $background;
+        @at-root {
+            a#{&} {
+                color: $color;
+
+                .list-group-item-heading {
+                    color: inherit;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $color;
+                    background-color: darken($background, 5%);
+                }
+                &.active,
+                &.active:hover,
+                &.active:focus {
+                    color: #fff;
+                    background-color: $color;
+                    border-color: $color;
+                }
+            }
+        }
+    }
+}
+
+@mixin close-dismissable($padding:0) {
+    position: relative;
+    padding-right: (strip-units($padding)*$font-size-base + 20px);
+
+    .close {
+        position: absolute;
+        right: $padding;
+        top: $padding;
+        line-height: 1;
+        color: inherit;
+        font-size: 150%;
+        font-weight: bold;
+        text-shadow: 0 1px 0 #fff;
+        @include opacity(.5);
+
+        &:hover,
+        &:focus {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            // 透明度变小
+            @include opacity(.8);
+        }
+    }
+
+    // 专门设置button以兼容ios
+    button.close {
+        // 去掉padding，紧密包裹自己
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        -webkit-appearance: none;
+    }
+}
+
+@mixin alert-variant($background, $border, $text-color) {
+    background-color: $background;
+    border-color: $border;
+    color: $text-color;
+
+    hr {
+        border-top-color: darken($border, 5%);
+    }
+    .alert-link {
+        color: darken($text-color, 10%);
+    }
+}
+
+@mixin navbar-vertical-align($element-height) {
+    margin-top: (($navbar-height - $element-height) / 2);
+    margin-bottom: (($navbar-height - $element-height) / 2);
+}
+
+@mixin nav-divider($color: #e5e5e5) {
+    height: 1px;
+    margin: (($line-height-computed / 2) - 1) 0;
+    overflow: hidden;
+    background-color: $color;
+}
+
+@mixin progress-bar-variant($color) {
+    background-color: $color;
+    @include gradient-striped();
+}
+
+@mixin panel-variant($border,$heading-text-color, $heading-bg-color, $heading-border) {
+    border-color: $border;
+
+    & > .panel-heading {
+        color: $heading-text-color;
+        background-color: $heading-bg-color;
+        border-color: $heading-border;
+
+        + .panel-collapse > .panel-body {
+            border-top-color: $border;
+        }
+    }
+    & > .panel-footer {
+        color: lighten($heading-text-color, 10%);
+        background-color: lighten($heading-bg-color, 8%);
+        border-color: $heading-border;
+
+        + .panel-collapse > .panel-body {
+            border-bottom-color: $border;
+        }
+    }
+}

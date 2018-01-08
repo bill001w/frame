@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/less/pc/m-boot.min.css">
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../../dist/less/pc/m-boot.min.js"></script>
+    <style>
+        .active {
+            background-color: #7b007b;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div style="float: left;padding-top:200px;width: 30%;min-height:1px;overflow: visible;">
+        <ul id="affix" data-scrollspy="href"
+            style="list-style:none;margin:0;padding:0;width:100%;background-color: #9cc2cb;">
+            <li><a href="href#1">href#1</a></li>
+            <li><a href="href#2">href#2</a></li>
+            <li><a href="href#4">href#4</a></li>
+            <li><a href="href#5">href#5</a></li>
+            <li><a href="href#6">href#6</a></li>
+            <li><a href="href#7">href#7</a></li>
+        </ul>
+    </div>
+    <div data-scrollspy="target"
+         style="float: left;position:relative;z-index:2;width: 70%;background-color: #EEEEEE;min-height: 1px;">
+        <div style="background-color: #0b2c89;height:100px;" data-scrollspyhref="href#1"></div>
+        <div style="background-color: #EEEEEE;height:300px;" data-scrollspyhref="href#2"></div>
+        <div style="background-color: #0b2c89;height:200px;" data-scrollspyhref="href#3"></div>
+        <div style="background-color: #EEEEEE;height:300px;" data-scrollspyhref="href#4"></div>
+        <div style="background-color: #0b2c89;height:400px;" data-scrollspyhref="href#5"></div>
+        <div style="background-color: #EEEEEE;height:200px;" data-scrollspyhref="href#6"></div>
+        <div style="background-color: #0b2c89;height:300px;" data-scrollspyhref="href#7"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var spy_href = $('[data-scrollspy="href"]');
+        var spy_target = $('[data-scrollspy="target"]');
+        var spy_href_a = spy_href.find('a');
+        var spy_target_href = spy_target.find('[data-scrollspyhref]');
+
+        $('#affix').m_affix({
+            offset: {
+                top: 100,
+                bottom: 600
+            }
+        });
+
+        spy_href_a.on("click", function (e) {
+            var href = $(this).attr('href');
+            var target = spy_target.find('[data-scrollspyhref="' + href + '"]');
+
+            if (target.length !== 0) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 300);
+            }
+
+            return false;
+        });
+
+        function setDimensionBar() {
+            var href;
+
+            spy_target_href.each(function (index, domEle) {
+                if ($(domEle).offset().top <= $(window).scrollTop()) {
+                    href = $(domEle).data('scrollspyhref');
+                    if (spy_href.find('[href="' + href + '"]').length) {
+                        spy_href_a.removeClass('active');
+                        spy_href.find('[href="' + href + '"]').addClass('active');
+                    }
+                }
+            });
+
+        }
+
+        $(window).on("scroll resize", function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            setDimensionBar();
+        });
+
+        setDimensionBar();
+    });
+</script>
+</body>
+</html>

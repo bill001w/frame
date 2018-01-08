@@ -1,0 +1,25 @@
+.m-grid9 {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        .setTopLine(@weuiGridBorderColor);
+    }
+    &:after {
+        .setLeftLine(@weuiGridBorderColor);
+    }
+
+    > .m-grid {
+        position: relative;
+        float: left;
+        padding: 20px 10px;
+        width: 33.333333%;
+
+        &:before {
+            .setRightLine(@weuiGridBorderColor);
+        }
+        &:after {
+            .setBottomLine(@weuiGridBorderColor);
+        }
+    }
+}

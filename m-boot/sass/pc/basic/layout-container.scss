@@ -1,0 +1,21 @@
+.container-fluid {
+    @include container-fixed;
+}
+
+.container {
+    @include container-fixed;
+
+    @each $breakpoint in map_keys($screens) {
+        @if $breakpoint == xs {
+            @include media-breakpoint-down(sm, $screens) {
+                width: map_get($containers, $breakpoint);
+                padding-left: ($grid-gutter-width / 2);
+                padding-right: ($grid-gutter-width / 2);
+            }
+        } @else {
+            @include media-breakpoint-up($breakpoint, $screens) {
+                width: map_get($containers, $breakpoint);
+            }
+        }
+    }
+}

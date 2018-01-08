@@ -1,0 +1,21 @@
+* {
+    outline: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    line-height: $line-height-base;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+.container {
+    padding: 0 $grid-gutter-width/2;
+}

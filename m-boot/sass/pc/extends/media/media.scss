@@ -1,0 +1,31 @@
+.media {
+    @extend %clearfix;
+}
+
+.media {
+    > .pull-left {
+        padding: 12px 10px 8px;
+        width: 25%;
+        vertical-align: top;
+
+        > a {
+            display: block;
+            > img {
+                @include img-responsive();
+            }
+        }
+
+        > ul {
+            margin: 5px 0 0;
+        }
+    }
+    > .pull-right {
+        padding: 8px 10px;
+        width: 75%;
+        vertical-align: top;
+
+        > .media-heading {
+            margin: 0 0 5px;
+        }
+    }
+}

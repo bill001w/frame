@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>basic</title>
+    <link rel="stylesheet" href="../plugins/icheck/skins/square/green.css">
+    <script src="../lib/jquery-1.11.1.js"></script>
+    <script src="../plugins/icheck/icheck.js"></script>
+    <link rel="stylesheet" href="../plugins/code-prettify/prettify.css">
+    <script src="../plugins/code-prettify/prettify.js"></script>
+    <link rel="stylesheet" href="../plugins/code-prettify/skin/atelier-cave-dark.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.css">
+    <script src="../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script src="../plugins/jQuery-validation/dist/jquery.validate.js"></script>
+    <script src="../plugins/jQuery-validation/dist/localization/messages_zh.min.js"></script>
+    <link rel="stylesheet" href="../../dist/less/pc/m-boot.min.css">
+    <!--<link rel="stylesheet" href="../dist/sass/mboot.min.css">-->
+    <style>
+        div[data-attr=width] {
+            height: 50px;
+            background-color: #fafafa;
+            border: 1px solid #999999;
+        }
+    </style>
+</head>
+<body onload="prettyPrint()">
+<div class="container">
+    <section>
+        <header>
+            <h2>一、布局</h2>
+        </header>
+        <section class="example">
+            <div class="container-fluid">
+                <header>
+                    <h3>1.非响应式</h3>
+                    <p>类名：.container-fluid</p>
+                </header>
+                <p>没有设置宽度，宽度上占满屏幕。与bootstrap相同。</p>
+            </div>
+        </section>
+        <section class="example">
+            <div class="container">
+                <header>
+                    <h3>2.响应式格栅</h3>
+                    <p>类名：container</p>
+                </header>
+                <p>定义4种屏幕宽度，不同屏幕宽度下内容区域宽度不同</p>
+                <p>内部可以使用响应式格栅系统。与bootstrap相比，去掉了offset/pull/push等功能。</p>
+            </div>
+        </section>
+    </section>
+    <section>
+        <header>
+            <h2>二、排版</h2>
+        </header>
+        <section class="example">
+            <header>
+                <h3>1.标题</h3>
+            </header>
+            <h1>.h1大标题
+                <small>小标题</small>
+            </h1>
+            <h2>.h2大标题
+                <small>小标题</small>
+            </h2>
+            <h3>.h3大标题
+                <small>小标题</small>
+            </h3>
+            <h4>.h4大标题
+                <small>小标题</small>
+            </h4>
+            <h5>.h5大标题
+                <small>小标题</small>
+            </h5>
+            <h6>.h6大标题
+                <small>小标题</small>
+            </h6>
+        </section>
+        <section class="example">
+            <header>
+                <h3>2.正文</h3>
+            </header>
+            <h4>（1）普通段落</h4>
+            <p>
+                正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文</p>
+            <h4>（2）.lead突出显示段落</h4>
+            <p class="lead">用.lead类可以使段落间距和字体变大，以突出显示。</p>
+            <h4>（3）ul无序列表</h4>
+            <ul>
+                <li>列表，统一了样式</li>
+                <li>列表，统一了样式</li>
+                <li>列表，统一了样式</li>
+            </ul>
+            <h4>（4）ol有序列表</h4>
+            <ol>
+
+                <li>列表，统一了样式</li>
+                <li>列表，统一了样式</li>
+                <li>列表，统一了样式</li>
+            </ol>
+            <h4>（5）dl</h4>
+            <dl>
+                <dt>dl标题</dt>
+                <dd>dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明dl说明</dd>
+            </dl>
+            <h4>（6）段落样式</h4>
+            <p class="text-primary">
+                正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文</p>
+            <p class="bg-danger">
+                正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文部分正文</p>
+            <h4>（7）图片</h4>
+            <div class="row">
+                <img src="../img/1.jpg" alt="" class="col-sm-3">
+                <img src="../img/5.jpg" alt="" class="col-sm-3 img-thumbnail">
+                <img src="../img/2.jpg" alt="" class="col-sm-3 img-responsive">
+                <img src="../img/4.jpg" alt="" class="col-sm-3 img-circle">
+            </div>
+            <h4>（8）地址</h4>
+            <address>
+                <strong>Some Company, Inc.</strong><br>
+                007 street<br>
+                Some City, State XXXXX<br>
+                <abbr title="Phone">P:</abbr> (123) 456-7890<br>
+                <a href="mailto:#">mailto@somedomain.com</a>
+            </address>
+            <h4>（9）微缩语</h4>
+            <abbr title="World Wide Web">WWW</abbr><br>
+            <abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+            <h4>（10）代码</h4>
+            <p>使用 <kbd>ctrl + p</kbd> 来打开打印窗口。</p>
+            <p><code>function func(){}</code></p>
+            <pre class="pre-scrollable">
+                function(){
+                    alert("this is a code fragment.");
+                }
+            </pre>
+            <h4>（11）google代码</h4>
+            <pre class="prettyprint linenums=0">
+                // Say hello world until the user starts questioning
+                // the meaningfulness of their existence.
+                function helloWorld(world) {
+                    for (var i = 42; --i >= 0;) {
+                        alert('Hello ' + String(world));
+                    }
+                }
+                p { color: pink }
+                b { color: blue }
+                u { color: "umber" }
+            </pre>
+            <h4>（12）引用</h4>
+            <blockquote>
+                这是一个带有源标题的引用。
+                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+        </section>
+    </section>
+    <section>
+        <header>
+            <h2>三、表格</h2>
+        </header>
+        <h3>1.默认表格样式</h3>
+        <div class="example">
+            <table>
+                <tr>
+                    <th>表头</th>
+                    <th>表头</th>
+                    <th>表头</th>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+            </table>
+        </div>
+        <h3>2.基础表格样式</h3>
+        <div class="example">
+            <table class="table">
+                <tr>
+                    <th>表头</th>
+                    <th>表头</th>
+                    <th>表头</th>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+            </table>
+        </div>
+        <h3>3.带边框表格样式</h3>
+        <div class="example">
+            <table class="table table-bordered table-striped table-hover">
+                <tr class="active">
+                    <th>表头</th>
+                    <th>表头</th>
+                    <th>表头</th>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+            </table>
+        </div>
+        <h3>4.condense表格样式</h3>
+        <div class="example">
+            <table class="table table-condensed">
+                <tr class="danger">
+                    <th>表头</th>
+                    <th>表头</th>
+                    <th>表头</th>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+                <tr>
+                    <td>类别</td>
+                    <td>表格内容</td>
+                    <td>表格内容</td>
+                </tr>
+            </table>
+        </div>
+        <h3>5.响应式表格样式</h3>
+        <div class="example">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>表头</th>
+                        <th>表头</th>
+                        <th>表头</th>
+                    </tr>
+                    <tr>
+                        <td>类别</td>
+                        <td>表格内容</td>
+                        <td>表格内容</td>
+                    </tr>
+                    <tr>
+                        <td>类别</td>
+                        <td>表格内容</td>
+                        <td>表格内容</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h2>四、表单</h2>
+        </header>
+        <div class="example">
+            <form action="">
+                <h4>（1）没有分组</h4>
+                <label for="haha1">haha</label>
+                <input type="text" id="haha1" name="haha1" class="form-control">
+                <label for="haha2">haha</label>
+                <input type="text" id="haha2" name="haha2" class="form-control">
+                <h4>（2）分组</h4>
+                <div class="form-group">
+                    <label for="haha3">haha</label>
+                    <input type="text" id="haha3" name="haha3" class="form-control input-lg">
+                </div>
+                <div class="form-group has-error has-feedback">
+                    <label for="haha4">haha</label>
+                    <input type="text" id="haha4" name="haha4" class="form-control">
+                    <label for="haha4" class="form-control-feedback">×</label>
+                </div>
+                <div class="form-group">
+                    <select name="" class="form-control">
+                        <option value="1">value 1</option>
+                        <option value="2">value 2</option>
+                        <option value="3">value 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="btn-upload">
+                        <input type="text"/>
+                        <a href="" class="btn btn-primary">浏览文件</a>
+                        <input type="file"/>
+                    </div>
+                    <script>
+                        $(document).on("change", ".btn-upload input[type=file]", function () {
+                            var uploadVal = $(this).val();
+                            $(this).siblings('input[type=text]').val(uploadVal).focus().blur();
+                        });
+                    </script>
+                </div>
+                <h4>（3）radio和checkbox</h4>
+                <label class="checkbox">
+                    <input type="checkbox" required>请打勾
+                </label>
+                <div class="checkbox">
+                    <input type="checkbox" required>请打勾
+                </div>
+                <div class="checkbox has-error">
+                    <input type="checkbox" id="divcheckboxb"><label for="divcheckboxb">请打勾</label>
+                </div>
+                <input type="submit" class="form-control">
+            </form>
+        </div>
+        <h4>（4）内联样式</h4>
+        <div class="example">
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <label for="haha5">haha</label>
+                    <input type="text" value="haha" id="haha5" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="haha6">haha</label>
+                    <input type="text" value="haha" id="haha6" class="form-control">
+                </div>
+                <label class="checkbox">
+                    <input type="checkbox">选择
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox">选择
+                </label>
+                <div class="checkbox has-error">
+                    <input type="checkbox" id="divcheckboxb2"><label for="divcheckboxb2">选择</label><label
+                        for="divcheckboxb2">请打勾</label>
+                </div>
+            </form>
+        </div>
+        <h4>（5）iCheck样式</h4>
+        <div class="example">
+            <p>
+                <label for="baz[1]">单选框</label>
+                <input type="radio" name="quux" id="baz[1]" checked>
+                <label for="baz[2]">单选框</label>
+                <input type="radio" name="quux" id="baz[2]">
+                <label>
+                    <input type="checkbox" name="quux[1]">
+                    复选框
+                </label>
+                <label>
+                    <input type="checkbox" name="quux[1]">
+                    复选框
+                </label>
+                <script>
+                    $(document).ready(function () {
+                        $('input[name^=quux]').iCheck({
+                            checkboxClass: 'icheckbox_square-green',
+                            radioClass: 'iradio_square-green',
+                            increaseArea: '50%' // optional
+                        });
+                    });
+                </script>
+            </p>
+        </div>
+        <h4>（6）switch效果</h4>
+        <div class="example">
+            <p>
+                <input type="checkbox" name="my-checkbox1">
+                <input type="checkbox" name="my-checkbox2" checked>
+                <script>
+                    $("[name='my-checkbox1']").bootstrapSwitch({
+                        size: 'large',
+                        onColor: 'danger'
+                    });
+                    $("[name='my-checkbox2']").bootstrapSwitch({
+                        onColor: 'primary'
+                    });
+                </script>
+            </p>
+        </div>
+        <h4>（7）表单验证</h4>
+        <div class="example">
+            <form action="" id="formvalidation">
+                <table>
+                    <tr>
+                        <td width="20%;"><label for="First name" class="form-label text-right">First name</label></td>
+                        <td><input type="text" class="form-control" id="First name" name="First name"
+                                   placeholder="First name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Last name" class="form-label text-right">Last name</label></td>
+                        <td><input type="text" class="form-control" id="Last name" name="Last name"
+                                   placeholder="Last name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label text-right">sexy</label></td>
+                        <td>
+                            <label class="radio-inline"><input type="radio" name="sexy" placeholder="sexy"
+                                                               value="1">male</label>
+                            <label class="radio-inline"><input type="radio" name="sexy" placeholder="sexy" value="0">female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Email" class="form-label text-right">Email</label></td>
+                        <td><input type="text" class="form-control" id="Email" name="Email" placeholder="Email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="country" class="form-label text-right">country</label></td>
+                        <td><select class="form-control" id="country" name="country">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Password" class="form-label text-right">Password</label></td>
+                        <td><input type="password" class="form-control" id="Password" name="Password"
+                                   placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Confirm password" class="form-label text-right">Confirm password</label></td>
+                        <td><input type="password" class="form-control" id="Confirm password" name="Confirm password"
+                                   placeholder="Confirm password"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="checkbox"><input type="checkbox" id="agree" name="agree"><label for="agree">Please
+                                agree to our policy</label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Sign Up" class="btn btn-primary">
+                        </td>
+                    </tr>
+                </table>
+                <script>
+                    $(function () {
+                        $("#formvalidation").validate({
+                            debug: true,
+                            rules: {
+                                "First name": "required",
+                                "Last name": "required",
+                                "sexy": "required",
+                                "Email": {
+                                    required: true,
+                                    email: true
+                                },
+                                "country": "required",
+                                "Password": {
+                                    required: true,
+                                    minlength: 5
+                                },
+                                "Confirm password": {
+                                    required: true,
+                                    minlength: 5,
+                                    equalTo: "#Password"
+                                },
+                                agree: "required"
+                            },
+                            errorPlacement: function (error, element) {
+                                if (element.prop("type") === "checkbox" || element.prop("type") === "radio") {
+                                    error.insertAfter(element.parent("label"));
+                                } else {
+                                    error.insertAfter(element);
+                                }
+                            },
+                            highlight: function (element, errorClass, validClass) {
+                                $(element).parents("td").addClass("has-error").removeClass("has-success");
+                            },
+                            unhighlight: function (element, errorClass, validClass) {
+                                $(element).parents("td").addClass("has-success").removeClass("has-error");
+                            }
+                        });
+                        $('input[name^=sexy]').iCheck({
+                            radioClass: 'iradio_square-green',
+                            increaseArea: '50%' // optional
+                        });
+                        $("[name='agree']").bootstrapSwitch({
+                            onColor: 'primary'
+                        });
+                    });
+                </script>
+            </form>
+        </div>
+        <h4>（8）文件上传</h4>
+        <div class="example">
+            <form id="fileupload-plus" action="//jquery-file-upload.appspot.com/" method="POST"
+                  enctype="multipart/form-data">
+                <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/">
+                </noscript>
+                <div class="row fileupload-buttonbar">
+                    <div class="col-lg-7">
+                <span class="btn btn-success fileinput-button">
+                    <span>Add files...</span>
+                    <input type="file" name="files[]" multiple>
+                </span>
+                        <button type="submit" class="btn btn-primary start"> Start upload</button>
+                        <button type="reset" class="btn btn-warning cancel"> Cancel upload</button>
+                        <button type="button" class="btn btn-danger delete"> Delete</button>
+                        <input type="checkbox" class="toggle">
+                        <span class="fileupload-process"></span>
+                    </div>
+                    <div class="col-lg-5 fileupload-progress fade">
+                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
+                             aria-valuemax="100">
+                            <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                        </div>
+                        <div class="progress-extended">&nbsp;</div>
+                    </div>
+                </div>
+                <table role="presentation" class="table table-striped">
+                    <tbody class="files"></tbody>
+                </table>
+            </form>
+            <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+            <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/vendor/jquery.ui.widget.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.iframe-transport.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-process.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-image.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-audio.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-video.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-validate.js"></script>
+            <!-- 全功能demo用js文件 -->
+            <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+            <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+            <script src="../plugins/jQuery-File-Upload-master/js/jquery.fileupload-ui.js"></script>
+            <!--[if (gte IE 8)&(lt IE 10)]>
+            <script src="../plugins/jQuery-File-Upload-master/js/cors/jquery.xdr-transport.js"></script>
+            <![endif]-->
+            <script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name">{%=file.name%}</p>
+            <strong class="error text-danger"></strong>
+        </td>
+        <td>
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn btn-primary start" disabled>
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+            <script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td>
+            <span class="preview">
+                {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                {% } %}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                {% if (file.url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                {% } else { %}
+                    <span>{%=file.name%}</span>
+                {% } %}
+            </p>
+            {% if (file.error) { %}
+                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            {% } %}
+        </td>
+        <td>
+            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td>
+            {% if (file.deleteUrl) { %}
+                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>Delete</span>
+                </button>
+                <input type="checkbox" name="delete" value="1" class="toggle">
+            {% } else { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+            <script>
+                $(function () {
+                    'use strict';
+
+                    // Initialize the jQuery File Upload widget:
+                    $('#fileupload-plus').fileupload({
+                        // Uncomment the following to send cross-domain cookies:
+                        //xhrFields: {withCredentials: true},
+                        url: 'server/php/',
+                        disableImageResize: /Android(?!.*Chrome)|Opera/
+                                .test(window.navigator && navigator.userAgent),
+                        imageMaxWidth: 800,
+                        imageMaxHeight: 800,
+                        imageCrop: true // Force cropped images
+                    });
+
+                    // Enable iframe cross-domain access via redirect option:
+                    $('#fileupload-plus').fileupload(
+                            'option',
+                            'redirect',
+                            window.location.href.replace(
+                                    /\/[^\/]*$/,
+                                    '/cors/result.html?%s'
+                            )
+                    );
+
+                    if (window.location.hostname === 'blueimp.github.io') {
+                        $('#fileupload-plus').fileupload('option', {
+                            url: '//jquery-file-upload.appspot.com/',
+                            // Enable image resizing, except for Android and Opera,
+                            // which actually support image resizing, but fail to
+                            // send Blob objects via XHR requests:
+                            disableImageResize: /Android(?!.*Chrome)|Opera/
+                                    .test(window.navigator.userAgent),
+                            maxFileSize: 999000,
+                            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+                        });
+                        // Upload server status check for browsers with CORS support:
+                        if ($.support.cors) {
+                            $.ajax({
+                                url: '//jquery-file-upload.appspot.com/',
+                                type: 'HEAD'
+                            }).fail(function () {
+                                $('<div class="alert alert-danger"/>')
+                                        .text('Upload server currently unavailable - ' +
+                                                new Date())
+                                        .appendTo('#fileupload-plus');
+                            });
+                        }
+                    } else {
+                        // Load existing files:
+                        $('#fileupload-plus').addClass('fileupload-processing');
+                        $.ajax({
+                            // Uncomment the following to send cross-domain cookies:
+                            //xhrFields: {withCredentials: true},
+                            url: $('#fileupload-plus').fileupload('option', 'url'),
+                            dataType: 'json',
+                            context: $('#fileupload-plus')[0]
+                        }).always(function () {
+                            $(this).removeClass('fileupload-processing');
+                        }).done(function (result) {
+                            $(this).fileupload('option', 'done')
+                                    .call(this, $.Event('done'), {result: result});
+                        });
+                    }
+                });
+            </script>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h2>五、按钮</h2>
+        </header>
+        <div class="example">
+            <button class="btn btn-default">fdsafsdf</button>
+            <button class="btn btn-primary">fdsafsdf</button>
+            <button class="btn btn-success">fdsafsdf</button>
+            <button class="btn btn-info">fdsafsdf</button>
+            <button class="btn btn-warning">fdsafsdf</button>
+            <button class="btn btn-danger">fdsafsdf</button>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+
+

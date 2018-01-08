@@ -1,0 +1,48 @@
+// Fonts
+@font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+@font-family-base: @font-family-sans-serif;
+
+@font-size-base: 14px;
+@font-size-sm: ceil((@font-size-base * 0.85)); // ~12px
+@font-size-lg: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small: 80%;
+
+@font-weight-base: normal;
+@font-weight-bold: bold;
+
+// ling-height
+// 没有单位，相当于em
+@line-height-xs: 1.1;
+@line-height-sm: 1.3;
+@line-height-base: 1.428571429; // 20/14
+@line-height-lg: 1.8;
+@line-height-computed: floor((@font-size-base * @line-height-base)); // ~20px
+
+// margin
+@margin-xs: @line-height-computed / 4; // 5px
+@margin-sm: @line-height-computed / 2; // 10px
+@margin-base: @line-height-computed; // 20px
+@margin-lg: @line-height-computed * 1.5; // 30px
+@margin-xl: @line-height-computed * 2; // 40px
+
+// padding
+@padding-sym-xs: 0.1em;
+@padding-sym-sm: 0.25em;
+@padding-sym-base: 0.5em;
+@padding-sym-lg: 1em;
+@padding-sym-xl: 1.5em;
+
+@padding-asym-xs: 0.1em 0.2em;
+@padding-asym-sm: 0.25em 0.5em;
+@padding-asym-base: 0.5em 1em;
+@padding-asym-lg: 1em 2em;
+@padding-asym-xl: 1.5em 3em;
+
+// border-radius
+@border-radius-xs: 0.1em;
+@border-radius-sm: 0.2em;
+@border-radius-base: 0.3em;
+@border-radius-lg: 0.4em;
+@border-radius-xl: 1em;
+@border-radius-circle: 50%;

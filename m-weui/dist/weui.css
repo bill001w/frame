@@ -1,0 +1,828 @@
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+.container {
+  padding: 0 15px;
+}
+.cell {
+  position: relative;
+  padding: 10px 15px;
+}
+.cell:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #e5e5e5;
+  color: #e5e5e5;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+.cell:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #e5e5e5;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+.m-radio-list {
+  display: block;
+  position: relative;
+  padding-right: 30px;
+}
+.m-radio-list > input[type=radio] {
+  position: absolute;
+  left: -9999em;
+}
+.m-radio-list > span.m-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.m-radio-list > span.m-icon:after {
+  content: " ";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  font-size: 1.5em;
+}
+.m-radio-list > input[type=radio]:checked + span.m-icon:after {
+  content: "\e8e4";
+  color: #09BB07;
+}
+.m-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+.m-checkbox > input[type=checkbox] {
+  position: absolute;
+  left: -9999em;
+}
+.m-checkbox > span.m-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.m-checkbox > span.m-icon:after {
+  content: "\e8b5";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  font-size: 1.5em;
+}
+.m-checkbox > input[type=checkbox]:checked + span.m-icon:after {
+  content: "\e8e4";
+  color: #09BB07;
+}
+.m-checkbox-switch {
+  display: block;
+  position: relative;
+  padding-right: 60px;
+  height: 32px;
+  line-height: 32px;
+}
+.m-checkbox-switch > input[type=checkbox] {
+  position: absolute;
+  left: -9999em;
+}
+.m-checkbox-switch > span.m-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52px;
+  height: 32px;
+  border: 1px solid #DFDFDF;
+  border-radius: 16px;
+  background-color: #DFDFDF;
+  outline: 0;
+  transition: background-color 0.1s, border 0.1s;
+}
+.m-checkbox-switch > span.m-icon:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 30px;
+  background-color: #DFDFDF;
+  border-radius: 15px;
+  transition: all 0.1s ease-in;
+}
+.m-checkbox-switch > span.m-icon:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: all 0.1s ease-in;
+}
+.m-checkbox-switch > input[type=checkbox]:checked + span.m-icon:before {
+  background-color: #04BE02;
+}
+.m-checkbox-switch > input[type=checkbox]:checked + span.m-icon:after {
+  left: 20px;
+}
+.m-select {
+  position: relative;
+}
+.m-select > select {
+  padding: 0 30px 0 15px;
+  line-height: inherit;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+  -webkit-appearance: none;
+}
+.m-select:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -4px;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.m-textarea > textarea {
+  display: block;
+  width: 100%;
+  line-height: inherit;
+  border: 0;
+  resize: none;
+  color: inherit;
+  font-size: 1em;
+  outline: 0;
+}
+.m-textarea > .textarea-counter {
+  color: #B2B2B2;
+  text-align: right;
+}
+.m-cell-container {
+  position: relative;
+}
+.m-cell {
+  display: table;
+  position: relative;
+  left: -58px;
+  z-index: 2;
+  width: 100%;
+  background-color: #ffffff;
+}
+.m-cell:active {
+  background-color: #ECECEC;
+}
+a.m-cell,
+a.m-cell:hover,
+a.m-cell:active {
+  color: inherit;
+  text-decoration: none;
+}
+.m-cell > .cell-hd,
+.m-cell > .cell-bd,
+.m-cell > .cell-ft {
+  display: table-cell;
+  padding: 10px 8px;
+  white-space: nowrap;
+}
+.m-cell > .cell-hd:first-child,
+.m-cell > .cell-bd:first-child,
+.m-cell > .cell-ft:first-child {
+  padding-left: 15px;
+}
+.m-cell > .cell-hd:last-child,
+.m-cell > .cell-bd:last-child,
+.m-cell > .cell-ft:last-child {
+  padding-right: 15px;
+}
+.m-cell > .cell-hd,
+.m-cell > .cell-ft {
+  width: 1%;
+}
+.m-cell > .cell-ft.m-ft-icon {
+  position: relative;
+  padding-right: 15px;
+}
+.m-cell > .cell-ft.m-ft-icon > span.m-icon {
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  margin-top: -3px;
+  width: 6px;
+  height: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.m-cell > .cell-ft.m-ft-icon:last-child {
+  padding-right: 30px;
+}
+.cell-del {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+}
+.cell-del > a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #FF3B30;
+}
+.cell-del a,
+.cell-del a:hover,
+.cell-del a:active {
+  color: inherit;
+  text-decoration: none;
+}
+/*components*/
+.m-gallery {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 2000;
+}
+.m-gallery div.m-gallery-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 60px;
+  left: 0;
+}
+.m-gallery div.m-gallery-wrap > img {
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
+}
+.m-gallery div.m-gallery-opr {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #0D0D0D;
+}
+.m-gallery div.m-gallery-opr > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5em;
+}
+.m-grid9 {
+  position: relative;
+  overflow: hidden;
+}
+.m-grid9:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+.m-grid9:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+.m-grid9 > .m-grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.333333%;
+}
+.m-grid9 > .m-grid:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+.m-grid9 > .m-grid:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+.m-img-uploader {
+  overflow: hidden;
+}
+.m-img-uploader ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.m-img-uploader ul li {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+}
+.m-img-uploader ul li.upload-status {
+  position: relative;
+}
+.m-img-uploader ul li.upload-status:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.m-img-uploader ul li.upload-status .upload-status-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #FFFFFF;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.m-img-uploader ul li img {
+  width: 100%;
+  height: 100%;
+}
+.uploader-input {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #D9D9D9;
+}
+.uploader-input:before,
+.uploader-input:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #D9D9D9;
+}
+.uploader-input:before {
+  width: 2px;
+  height: 39.5px;
+}
+.uploader-input:after {
+  width: 39.5px;
+  height: 2px;
+}
+.uploader-input input[type=file] {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.m-slider {
+  padding: 15px;
+}
+.m-slider .m-slider-line {
+  position: relative;
+  height: 2px;
+  background-color: #E9E9E9;
+}
+.m-slider .m-slider-line .m-slider-track {
+  width: 50%;
+  height: 2px;
+  background-color: #1AAD19;
+}
+.m-slider .m-slider-line .m-slider-handler {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14px;
+  margin-left: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px #999;
+}

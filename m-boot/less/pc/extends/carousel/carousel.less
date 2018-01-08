@@ -1,0 +1,217 @@
+.carousel {
+    position: relative;
+
+    &.vertical .carousel-indicators,
+    .album & .carousel-indicators {
+        display: none;
+    }
+}
+
+.carousel-content {
+    position: relative;
+    overflow: hidden;
+
+    > ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+
+        &:extend(.clearfix all);
+
+        > li {
+            display: inline-block;
+            position: relative;
+            // 垂直排列时需要
+            float: left;
+
+            > img,
+            > a > img {
+                &:extend(.img-responsive);
+                line-height: 1;
+            }
+        }
+
+        > li.active {
+            border: 2px solid red;
+        }
+    }
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        margin: 10px;
+        width: 10px;
+        height: 10px;
+        text-indent: -999px;
+        border: 1px solid @carousel-indicator-border-color;
+        border-radius: 10px;
+        cursor: pointer;
+
+        // IE8-9 hack for event handling
+        //
+        // Internet Explorer 8-9 does not support clicks on elements without a set
+        // `background-color`. We cannot use `filter` since that's not viewed as a
+        // background color by the browser. Thus, a hack is needed.
+        //
+        // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
+        // set alpha transparency for the best results possible.
+        background-color: #000 \9; // IE8
+        background-color: rgba(0, 0, 0, 0); // IE9
+    }
+    .active {
+        background-color: @carousel-indicator-active-bg;
+    }
+}
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: @carousel-control-width;
+    .opacity(@carousel-control-opacity);
+    font-size: @carousel-control-font-size;
+    color: @carousel-control-color;
+    text-align: center;
+    text-shadow: @carousel-text-shadow;
+    z-index: 2;
+
+    &.left {
+        #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
+    }
+
+    &.top {
+        width: 100%;
+        height: @carousel-control-width;
+        #gradient > .vertical(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
+    }
+    &.bottom {
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: @carousel-control-width;
+        #gradient > .vertical(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
+    }
+
+    &:hover,
+    &:focus {
+        outline: 0;
+        color: @carousel-control-color;
+        text-decoration: none;
+        .opacity(.9);
+    }
+
+    .icon-prev,
+    .icon-next {
+        display: inline-block;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        font-family: serif;
+    }
+    .icon-prev {
+        left: 50%;
+        margin-left: -10px;
+    }
+    .icon-next {
+        right: 50%;
+        margin-right: -10px;
+    }
+}
+
+@media screen and (min-width: @screen-sm) {
+    .carousel-control {
+        .icon-prev,
+        .icon-next {
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+            font-size: 30px;
+        }
+        .icon-prev {
+            margin-left: -15px;
+        }
+        .icon-next {
+            margin-right: -15px;
+        }
+    }
+
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
+.carousel-zoomout {
+    position: relative;
+
+    > .carousel-content {
+        height: 100%;
+
+        > ul {
+            height: 100%;
+
+            > li {
+                display: table;
+                position: absolute;
+                float: none;
+                top: 0;
+                left: 31%;
+                z-index: -1;
+                opacity: 0;
+                width: 30%;
+                height: 100%;
+                transition: all 0.5s;
+
+                > a {
+                    display: table-cell;
+                    width: 100%;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+                > img {
+                    display: inline-block;
+                    position: relative;
+                }
+
+                &.carousel-zoomout-current {
+                    z-index: 1;
+                    opacity: 1;
+                    width: 38%;
+                }
+
+                &.carousel-zoomout-pre {
+                    z-index: 1;
+                    opacity: 1;
+                    left: 0;
+                }
+
+                &.carousel-zoomout-next {
+                    z-index: 1;
+                    opacity: 1;
+                    left: 70%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.panel {
+    margin-bottom: $line-height-computed;
+    // border的颜色统一设置
+    border: 1px solid transparent;
+    border-radius: $border-radius-base;
+    background-color: $panel-bg;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-heading {
+    padding: $padding-asym-base;
+    border-bottom: 1px solid transparent;
+    @include border-top-radius((strip-units($border-radius-base) * $font-size-base - 1));
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    // 字体大小固定
+    font-size: ceil(($font-size-base * 1.125));
+    color: inherit;
+
+    > a {
+        color: inherit;
+    }
+}
+
+.panel-body {
+    padding: $padding-asym-base;
+    @extend %clearfix;
+}
+
+.panel-footer {
+    padding: $padding-asym-base;
+    background-color: $panel-footer-bg;
+    border-top: 1px solid $panel-inner-border;
+    @include border-bottom-radius((strip-units($border-radius-base) * $font-size-base - 1));
+}
+
+@each $color, $value in $theme-colors {
+    .panel-#{$color}{
+        @include panel-variant(darken($value, 10%), $value, theme-color-level($color, -9), theme-color-level($color, 6));
+    }
+}

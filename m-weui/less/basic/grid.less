@@ -1,0 +1,17 @@
+.container {
+    padding: 0 15px;
+}
+
+.cell {
+    position: relative;
+    padding: 10px 15px;
+
+    &:before {
+        .setTopLine(@weuiCellBorderColor);
+        z-index: 2;
+    }
+    &:after {
+        .setBottomLine(@weuiCellBorderColor);
+        z-index: 2;
+    }
+}

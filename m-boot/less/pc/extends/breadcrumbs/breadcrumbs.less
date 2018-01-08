@@ -1,0 +1,21 @@
+.breadcrumb {
+    list-style: none;
+    margin-bottom: @line-height-computed;
+    padding: @padding-asym-base;
+    border-radius: @border-radius-base;
+    background-color: @breadcrumb-bg;
+    &:extend(.clearfix all);
+
+    > li {
+        float: left;
+        margin-right: @margin-xs;
+        > .divide {
+            margin-right: @margin-xs;
+            color: @breadcrumb-color;
+        }
+    }
+
+    > .active {
+        color: @breadcrumb-active-color;
+    }
+}

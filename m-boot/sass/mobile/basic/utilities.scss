@@ -1,0 +1,15 @@
+.mask-black-dialog {
+    @include mask(rgba(0, 0, 0, .4), 1500);
+}
+
+.mask-black {
+    @include mask(rgba(0, 0, 0, .4), 500);
+}
+
+.mask-white-dialog {
+    @include mask(rgba(0, 0, 0, 0), 1500);
+}
+
+.mask-white {
+    @include mask(rgba(0, 0, 0, 0), 500);
+}

@@ -1,0 +1,166 @@
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    @extend %clearfix;
+
+    > li {
+        position: relative;
+        display: block;
+        > a {
+            position: relative;
+            display: block;
+            padding: $padding-asym-base;
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                background-color: $nav-link-hover-bg;
+            }
+        }
+        &.disabled > a {
+            color: $nav-disabled-link-color;
+            &:hover,
+            &:focus {
+                color: $nav-disabled-link-hover-color;
+                text-decoration: none;
+                background-color: transparent;
+                cursor: not-allowed;
+            }
+        }
+    }
+    .open > a {
+        &,
+        &:hover,
+        &:focus {
+            background-color: $nav-link-hover-bg;
+            border-color: $link-color;
+        }
+    }
+    // Prevent IE8 from misplacing imgs
+    // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+    > li > a > img {
+        max-width: none;
+    }
+}
+
+.nav-tabs {
+    border-bottom: 1px solid $nav-tabs-border-color;
+    > li {
+        float: left;
+        margin-bottom: -1px;
+        > a {
+            margin-right: 2px;
+            line-height: $line-height-base;
+            border: 1px solid transparent;
+            border-radius: $border-radius-base $border-radius-base 0 0;
+            &:hover {
+                border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+            }
+        }
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $nav-tabs-active-link-hover-color;
+                background-color: $nav-tabs-active-link-hover-bg;
+                border: 1px solid $nav-tabs-active-link-hover-border-color;
+                border-bottom-color: transparent;
+                cursor: default;
+            }
+        }
+    }
+    &.nav-justified {
+        @extend .nav-justified;
+        @extend .nav-tabs-justified;
+    }
+}
+
+.nav-pills {
+    > li {
+        float: left;
+
+        > a {
+            border-radius: $border-radius-base;
+        }
+        + li {
+            margin-left: 2px;
+        }
+
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $nav-pills-active-link-hover-color;
+                background-color: $nav-pills-active-link-hover-bg;
+            }
+        }
+    }
+}
+
+// Stacked pills
+.nav-stacked {
+    > li {
+        float: none;
+        + li {
+            margin-top: 2px;
+            margin-left: 0;
+        }
+    }
+}
+
+.nav-justified {
+    width: 100%;
+    > li {
+        // 自适应在手机屏默认是独占1行
+        float: none;
+        > a {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+    }
+    @include media-breakpoint-up('sm') {
+        // 在大屏在为table-cell
+        > li {
+            display: table-cell;
+            width: 1%;
+            > a {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// 专门针对nab-tabs的两端对齐样式
+.nav-tabs-justified {
+    // 因为a没有了margin-right，所有底部边框可以直接用a的就行
+    border-bottom: 0;
+    > li > a {
+        margin-right: 0;
+        border-radius: $border-radius-base;
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+        // 手机屏，显示底部边框
+        border: 1px solid $nav-tabs-justified-link-border-color;
+    }
+    @include media-breakpoint-up('sm') {
+        > li > a {
+            border-bottom: 1px solid $nav-tabs-justified-link-border-color;
+            border-radius: $border-radius-base $border-radius-base 0 0;
+        }
+
+        > .active > a,
+        > .active > a:hover,
+        > .active > a:focus {
+            // 非手机屏，bg背景色，不显示底部边框
+            border-bottom-color: $nav-tabs-justified-active-link-border-color;
+        }
+    }
+}
+
+.nav-tabs .dropdown-menu {
+    // 不让dropdown-menu和nav有1px的间隔
+    margin-top: -1px;
+    @include border-top-radius(0);
+}

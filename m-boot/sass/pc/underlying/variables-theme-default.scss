@@ -1,0 +1,290 @@
+// Color
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: (
+        100: $gray-100,
+        200: $gray-200,
+        300: $gray-300,
+        400: $gray-400,
+        500: $gray-500,
+        600: $gray-600,
+        700: $gray-700,
+        800: $gray-800,
+        900: $gray-900
+) !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$colors: (
+        blue: $blue,
+        indigo: $indigo,
+        purple: $purple,
+        pink: $pink,
+        red: $red,
+        orange: $orange,
+        yellow: $yellow,
+        green: $green,
+        teal: $teal,
+        cyan: $cyan,
+        white: $white,
+        gray: $gray-600,
+        gray-dark: $gray-800
+) !default;
+
+$theme-colors: (
+        default:$gray-600,
+        primary: $blue,
+        secondary: $gray-600,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800
+) !default;
+
+$theme-color-interval: 8% !default;
+
+$disabled-color: $gray-600 !default;
+$disabled-bg: $white !default;
+$disabled-border-color: $gray-300 !default;
+
+//== Scaffolding
+$body-color: $gray-900 !default;
+$body-bg: $white !default;
+
+//== Typography--basic
+$headings-color: inherit !default;
+$headings-small-color: $gray-700 !default;
+
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+$link-color: $blue !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-active-color: $white !default;
+$link-active-bg: $white !default;
+$link-active-hover: $white !default;
+$link-active-hover-bg: $white !default;
+
+$mark-bg: $red !default;
+$abbr-border-color: $gray-500 !default;
+$blockquote-border-color: $gray-500 !default;
+$blockquote-small-color: $gray-500 !default;
+
+//== Typography--images
+$thumbnail-bg: $body-bg !default;
+$thumbnail-border: $gray-500 !default;
+$thumbnail-caption-color: $body-color !default;
+$thumbnail-caption-padding: 0 9px !default;
+
+//== Typography--code
+$code-color: $red !default;
+$code-bg: $gray-100 !default;
+$kbd-color: $white !default;
+$kbd-bg: $gray-700 !default;
+$pre-color: $gray-800 !default;
+$pre-bg: $gray-100 !default;
+$pre-border-color: $gray-500 !default;
+
+//== Tables
+$table-bg: $body-bg !default;
+$table-bg-accent: darken($table-bg, 1) !default;
+$table-bg-hover: darken($table-bg, 1.5) !default;
+$table-bg-active: $table-bg-hover !default;
+$table-border-color: $gray-200 !default;
+
+//== Forms
+$input-color: $gray-700 !default;
+$input-bg: $white !default;
+$input-border: rgba($black, .15) !default;
+$input-border-focus: lighten(theme-color("primary"), 25%) !default;
+$input-bg-disabled: $gray-200 !default;
+$input-color-placeholder: $gray-600 !default;
+$legend-color: $gray-700 !default;
+$legend-border-color: $gray-600 !default;
+
+//== Buttons
+$btn-link-disabled-color: $gray-200 !default;
+
+//==
+// Components
+//==
+$component-active-color: #fff !default;
+$component-active-bg: $blue !default;
+$caret-width-base: 4px !default;
+$caret-width-large: 5px !default;
+
+// affix-----没有
+
+// alert
+
+// badge & label
+$badge-label-color: $white !default;
+$badge-label-link-hover-color: $white !default;
+
+// breadcrumb
+$breadcrumb-color: $gray-600 !default;
+$breadcrumb-bg: $gray-400 !default;
+$breadcrumb-active-color: $gray-400 !default;
+
+// button-group 无
+
+//== Carousel
+$carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, .6) !default;
+$carousel-control-color: $white !default;
+$carousel-control-width: 15% !default;
+$carousel-control-opacity: .5 !default;
+$carousel-control-font-size: 20px !default;
+$carousel-indicator-active-bg: $white !default;
+$carousel-indicator-border-color: $white !default;
+$carousel-caption-color: $white !default;
+
+// dropdown
+$dropdown-bg: $white !default;
+$dropdown-border: $gray-300 !default;
+$dropdown-divider-bg: $gray-500 !default;
+
+$dropdown-link-color: $gray-600 !default;
+$dropdown-link-hover-color: darken($gray-600, 5%) !default;
+$dropdown-link-hover-bg: $gray-400 !default;
+$dropdown-link-active-color: $component-active-color !default;
+$dropdown-link-active-bg: $component-active-bg !default;
+$dropdown-link-disabled-color: $gray-300 !default;
+
+$dropdown-header-color: $gray-300 !default;
+
+$dropdown-caret-color: $black !default;
+$dropdown-backdrop-bg: $black !default;
+$dropdown-backdrop-opacity: 0.5 !default;
+
+//== List group
+$list-group-bg: $white !default;
+$list-group-border: $gray-500 !default;
+$list-group-border-radius: $border-radius-base !default;
+$list-group-hover-bg: $gray-400 !default;
+$list-group-active-color: $component-active-color !default;
+$list-group-active-bg: $component-active-bg !default;
+$list-group-active-border: $list-group-active-bg !default;
+$list-group-active-text-color: lighten($list-group-active-bg, 40%) !default;
+$list-group-disabled-color: $gray-300 !default;
+$list-group-disabled-bg: $gray-300 !default;
+$list-group-disabled-text-color: $list-group-disabled-color !default;
+$list-group-link-color: $gray-800 !default;
+$list-group-link-hover-color: $list-group-link-color !default;
+$list-group-link-heading-color: $gray-900 !default;
+
+// meida 无
+
+// modal
+$modal-content-bg: $white !default;
+$modal-content-border-color: rgba(0, 0, 0, .2) !default;
+$modal-content-fallback-border-color: $gray-800 !default;
+$modal-backdrop-bg: $black !default;
+$modal-backdrop-opacity: .5 !default;
+$modal-header-border-color: $gray-500 !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+
+//== Navs
+$nav-link-hover-bg: $gray-300 !default;
+$nav-disabled-link-color: $gray-300 !default;
+$nav-disabled-link-hover-color: $gray-300 !default;
+$nav-open-link-hover-color: $white !default;
+
+$nav-tabs-border-color: $gray-500 !default;
+$nav-tabs-link-hover-border-color: $gray-300 !default;
+$nav-tabs-active-link-hover-bg: $body-bg !default;
+$nav-tabs-active-link-hover-color: $gray-600 !default;
+$nav-tabs-active-link-hover-border-color: $gray-500 !default;
+$nav-tabs-justified-link-border-color: $gray-500 !default;
+$nav-tabs-justified-active-link-border-color: $body-bg !default;
+
+$nav-pills-active-link-hover-bg: $component-active-bg !default;
+$nav-pills-active-link-hover-color: $component-active-color !default;
+
+//== Navbar
+$navbar-default-color: $gray-700 !default;
+$navbar-default-bg: $gray-300 !default;
+$navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-color: $gray-700 !default;
+$navbar-default-link-hover-color: $gray-900 !default;
+$navbar-default-link-hover-bg: transparent !default;
+$navbar-default-link-active-color: $gray-800 !default;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color: $gray-600 !default;
+$navbar-default-link-disabled-bg: transparent !default;
+$navbar-default-brand-color: $navbar-default-link-color !default;
+$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg: transparent !default;
+$navbar-default-toggle-hover-bg: $gray-500 !default;
+$navbar-default-toggle-icon-bar-bg: $gray-800 !default;
+$navbar-default-toggle-border-color: $gray-500 !default;
+
+$navbar-inverse-color: $gray-300 !default;
+$navbar-inverse-bg: $gray-900 !default;
+$navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-color: $gray-300 !default;
+$navbar-inverse-link-hover-color: $white !default;
+$navbar-inverse-link-hover-bg: transparent !default;
+$navbar-inverse-link-active-color: $navbar-inverse-link-hover-color !default;
+$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-disabled-color: $gray-800 !default;
+$navbar-inverse-link-disabled-bg: transparent !default;
+$navbar-inverse-brand-color: $navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color: $white !default;
+$navbar-inverse-brand-hover-bg: transparent !default;
+$navbar-inverse-toggle-hover-bg: $gray-900 !default;
+$navbar-inverse-toggle-icon-bar-bg: $white !default;
+$navbar-inverse-toggle-border-color: $gray-900 !default;
+
+//== Pagination
+$pagination-color: $link-color !default;
+$pagination-bg: $white !default;
+$pagination-border: $gray-500 !default;
+
+$pagination-hover-color: $link-hover-color !default;
+$pagination-hover-bg: $gray-300 !default;
+$pagination-hover-border: $gray-500 !default;
+$pagination-active-color: $white !default;
+$pagination-active-bg: $blue !default;
+$pagination-active-border: $blue !default;
+$pagination-disabled-color: $gray-300 !default;
+$pagination-disabled-bg: $white !default;
+$pagination-disabled-border: $gray-500 !default;
+
+$pager-bg: $pagination-bg !default;
+$pager-border: $pagination-border !default;
+$pager-border-radius: 15px !default;
+$pager-hover-bg: $pagination-hover-bg !default;
+$pager-active-bg: $pagination-active-bg !default;
+$pager-active-color: $pagination-active-color !default;
+$pager-disabled-color: $pagination-disabled-color !default;
+
+// pannel
+$panel-bg: $white !default;
+$panel-inner-border: $gray-500 !default;
+$panel-footer-bg: $gray-400 !default;
+
+//== Progress bars
+$progress-bg: $gray-400 !default;
+$progress-bar-color: $white !default;
+$progress-bar-bg: $blue !default;

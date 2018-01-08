@@ -1,0 +1,257 @@
+@mixin container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+    @extend %clearfix;
+}
+
+@mixin media-breakpoint-up($name, $screens: $screens) {
+    $min: map-get($screens, $name);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $screens: $screens) {
+    $max: breakpoint-max($name, $screens);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin make-grid-columns($screens: $screens, $columns: $grid-columns, $gutter: $grid-gutter-width) {
+    %grid-column {
+        position: relative;
+        min-height: 1px; // Prevent columns from collapsing when empty
+        padding-right: ($gutter / 2);
+        padding-left: ($gutter / 2);
+    }
+
+    @each $breakpoint in map-keys($screens) {
+        @for $i from 1 through $columns {
+            .col-#{$breakpoint}-#{$i} {
+                @extend %grid-column;
+            }
+        }
+
+        @include media-breakpoint-up($breakpoint, $screens) {
+            %col-#{$breakpoint}-float {
+                float: left;
+            }
+            @for $i from 1 through $columns {
+                .col-#{$breakpoint}-#{$i} {
+                    @extend %col-#{$breakpoint}-float;
+                }
+            }
+
+            @for $i from 1 through $columns {
+                .col-#{$breakpoint}-#{$i} {
+                    width: percentage($i / $columns);
+                }
+            }
+        }
+    }
+}
+
+@mixin text-emphasis-variant($elem, $color) {
+    #{$elem} {
+        color: $color !important;
+    }
+    a#{$elem}:hover {
+        color: darken($color, 10%) !important;
+    }
+}
+
+@mixin bg-variant($elem, $color) {
+    #{$elem} {
+        background-color: $color !important;
+    }
+    a#{$elem}:hover {
+        background-color: darken($color, 10%) !important;
+    }
+}
+
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+    background-image: url($file-1x);
+
+    @media only screen and (min-resolution: 192dpi), // IE9-11 don't support dppx
+    only screen and (min-resolution: 2dppx) { // Standardized
+        background-image: url($file-2x);
+        background-size: $width-1x $height-1x;
+    }
+}
+
+@mixin table-row-variant($state, $background) {
+    .table > thead > tr,
+    .table > thead > tr,
+    .table > tbody > tr,
+    .table > tfoot > tr {
+        > td.#{$state},
+        > th.#{$state},
+        &.#{$state} > td,
+        &.#{$state} > th {
+            background-color: $background;
+        }
+    }
+
+    .table-hover > tbody > tr {
+        > td.#{$state}:hover,
+        > th.#{$state}:hover,
+        &.#{$state}:hover > td,
+        &:hover > .#{$state},
+        &.#{$state}:hover > th {
+            background-color: darken($background, 5%);
+        }
+    }
+}
+
+@mixin form-control-validation($color) {
+    &.radio,
+    &.checkbox,
+    &.radio-inline,
+    &.checkbox-inline,
+    label {
+        color: $color;
+    }
+
+    .form-control {
+        border-color: $color;
+        background-color: rgba($color, .25);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        &:focus {
+            border-color: darken($color, 10%);
+            $shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($color, 20%);
+            box-shadow: $shadow;
+        }
+    }
+
+    .form-control-feedback {
+        color: $color;
+    }
+
+}
+
+@mixin form-control-focus($color: $input-border-focus) {
+    $color-rgba: rgba(red($color), green($color), blue($color), .6);
+    &:focus {
+        border-color: $color;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
+    }
+}
+
+@mixin input-size($input-height,$line-height,$padding,$border-radius,$font-size) {
+    height: $input-height;
+    padding: $padding;
+    line-height: $line-height;
+    border-radius: $border-radius;
+    font-size: $font-size;
+
+    @at-root {
+        select#{&} {
+            height: $input-height;
+            line-height: $input-height;
+        }
+
+        textarea#{&},
+        select[multiple] & {
+            height: auto;
+        }
+    }
+}
+
+@mixin button-size($padding,$line-height,$border-radius,$font-size) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+@mixin button-variant($color) {
+    @include color-yiq($color);
+    $background: $color;
+    $border: $color;
+    $active-background: darken($background, 7.5%);
+    $active-border: darken($border, 10%);
+
+    background-color: $background;
+    border-color: $border;
+
+    &:hover {
+        @include color-yiq($background);
+        background-color: $active-background;
+        border-color: $active-border;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 3px rgba($border, .5);
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+        border-color: $border;
+        background-color: transparent;
+    }
+
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+        @include color-yiq($color);
+        background-color: $active-background;
+        background-image: none; // Remove the gradient for the pressed/active state
+        border-color: $active-border;
+    }
+}
+
+@mixin button-outline-variant($color, $color-hover: #fff) {
+    color: $color;
+    background-color: transparent;
+    background-image: none;
+    border-color: $color;
+
+    &:hover {
+        color: $color-hover;
+        background-color: $color;
+        border-color: $color;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 3px rgba($color, .5);
+    }
+
+    &.disabled,
+    &:disabled {
+        color: $color;
+        background-color: transparent;
+    }
+
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+        color: $color-hover;
+        background-color: $color;
+        border-color: $color;
+    }
+}

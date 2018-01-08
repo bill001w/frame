@@ -1,0 +1,23 @@
+.container-fluid {
+    .container-fixed();
+}
+
+.container {
+    .container-fixed();
+
+    // pc屏的container没有padding，手机屏才有，与bootstrap3不同，因为pc端不需要padding，所以需要对移动端单独设置
+    @media (max-width: @screen-xs-max) {
+        width: 100%;
+        padding-left: (@grid-gutter-width / 2);
+        padding-right: (@grid-gutter-width / 2);
+    }
+    @media (min-width: @screen-sm) {
+        width: @container-sm;
+    }
+    @media (min-width: @screen-md) {
+        width: @container-md;
+    }
+    @media (min-width: @screen-lg) {
+        width: @container-lg;
+    }
+}

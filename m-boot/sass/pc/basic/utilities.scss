@@ -1,0 +1,44 @@
+.clearfix {
+    @extend %clearfix;
+}
+
+.center-block {
+    @include center-block();
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    @include text-hide();
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity .15s linear;
+    &.in {
+        opacity: 1;
+    }
+}

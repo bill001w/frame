@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../../dist/less/pc/m-boot.min.css">
+    <style>
+        #test {
+            position: relative;
+            margin: 40px auto;
+            width: 640px;
+        }
+
+        #test:after {
+            display: table;
+            content: " ";
+            clear: both;
+        }
+
+        #test1 {
+            float: left;
+            margin-right: 40px;
+            width: 400px;
+            height: 400px;
+        }
+
+        #test2 {
+            float: left;
+            width: 200px;
+            height: 400px;
+        }
+
+        #test3 {
+            position: relative;
+            margin: 40px auto;
+            width: 800px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body class="index">
+<div id="test" class="album">
+    <div id="test1"></div>
+    <div id="test2"></div>
+</div>
+<div id="test3"></div>
+<script src="../lib/jquery-1.12.4.js"></script>
+<script src="../lib/jquery.mobile.touch.js"></script>
+<script src="../../dist/less/pc/m-boot.min.js"></script>
+<script>
+    $(function () {
+        var imgs = [
+            {src: '../img/1.jpg', alt: '示例图片', url: ''},
+            {src: '../img/2.jpg', alt: '示例图片', url: ''},
+            {src: '../img/3.jpg', alt: '示例图片', url: ''},
+            {src: '../img/4.jpg', alt: '示例图片', url: ''},
+            {src: '../img/5.jpg', alt: '示例图片', url: ''},
+            {src: '../img/6.jpg', alt: '示例图片', url: ''},
+            {src: '../img/7.jpg', alt: '示例图片', url: ''},
+            {src: '../img/8.jpg', alt: '示例图片', url: ''}
+        ];
+
+        var Carousel = new $.Album({
+            album: {
+                root: '#test1',
+                imgs: imgs,
+                speed: 400,
+                interval: 3000,
+                itemsPerPage: 1,
+                curPage: 1,
+                direction: 'V',
+                pause: 'hover',
+                auto: true
+            },
+            carousel: {
+                root: '#test2',
+                imgs: imgs,
+                speed: 400,
+                interval: 3000,
+                itemsPerPage: 4,
+                curPage: 1,
+                direction: 'V',
+                pause: 'hover',
+                auto: false
+            }
+        });
+    });
+
+    $(function () {
+        var imgs = [
+            {src: '../img/1.jpg', alt: '示例图片', url: ''},
+            {src: '../img/2.jpg', alt: '示例图片', url: ''},
+            {src: '../img/3.jpg', alt: '示例图片', url: ''},
+            {src: '../img/4.jpg', alt: '示例图片', url: ''},
+            {src: '../img/5.jpg', alt: '示例图片', url: ''},
+            {src: '../img/6.jpg', alt: '示例图片', url: ''},
+            {src: '../img/7.jpg', alt: '示例图片', url: ''},
+            {src: '../img/8.jpg', alt: '示例图片', url: ''}
+        ];
+
+        var zoomOutCarousel = new $.zoomOutCarousel({
+            root: '#test3',
+            imgs: imgs,
+            speed: 400,
+            interval: 3000,
+            curIndex: 1,
+            pause: 'hover',
+            auto: true
+        }).buildDomAndInit();
+    });
+</script>
+</body>
+</html>

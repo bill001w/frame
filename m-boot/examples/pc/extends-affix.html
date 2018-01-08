@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/less/pc/m-boot.min.css">
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../../dist/less/pc/m-boot.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div style="float: left;padding-top:200px;width: 30%;min-height:1px;overflow: visible;">
+        <div id="affix" style="width:100px;height:300px;background-color: #0BB20C;"></div>
+    </div>
+    <div id="reference" style="float:left;width:70%;height:2000px;background-color: #0b2c89;">
+    </div>
+</div>
+<div style="height:500px;background-color: #7b007b;"></div>
+<script>
+    $(function () {
+        $('#affix').m_affix({
+            offset: {
+                top: 100,
+                bottom: 600
+            }
+        });
+    });
+</script>
+</body>
+</html>

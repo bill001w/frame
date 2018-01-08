@@ -1,0 +1,151 @@
+.keyboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-keyboard;
+    background-color: #F7F7F7;
+    // y轴向下移动100%
+    transform: translate(0, 100%);
+    transition: transform .3s;
+    &.keyboard-show {
+        transform: translate(0, 0);
+    }
+}
+
+.keyboard-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: .8rem;
+    font-size: .3rem;
+    color: #1F2324;
+    &:after {
+        @include bottom-line($line-color);
+    }
+}
+
+.keyboard-error {
+    padding: 2px .8rem;
+    height: .5rem;
+    line-height: .5rem;
+    overflow: hidden;
+    font-size: .24rem;
+    color: #F00;
+}
+
+.keyboard-password {
+    display: flex;
+    position: relative;
+    margin: 0 .8rem;
+    background-color: #FFF;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        border: 1px solid $line-color;
+        border-radius: 4px;
+        transform: scale(.5);
+        transform-origin: 0 0;
+    }
+    li {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+        height: 1rem;
+        &:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            width: 1px;
+            height: 50%;
+            background-color: $line-color;
+            transform: scaleX(.5);
+        }
+        i {
+            display: none;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+    }
+}
+
+.keyboard-content {
+    position: relative;
+    margin-top: .3rem;
+    background-color: #FFF;
+    &:before {
+        @include top-line($line-color);
+    }
+}
+
+.keyboard-title {
+    margin-bottom: 1px; /* for old android */
+    padding: .2rem 0 .12rem;
+    overflow: hidden;
+    font-size: .24rem;
+    text-align: center;
+    color: #222;
+    background-color: #FFF;
+    &:before {
+        content: '\e60a';
+        margin-right: .06rem;
+        line-height: 1;
+        font-family: $iconfont-inlay;
+        font-size: .26rem;
+        color: #FF2424;
+    }
+}
+
+.keyboard-numbers {
+    font-size: .48rem;
+    background-color: #FFF;
+    > li {
+        display: flex;
+        width: 100%;
+        > a {
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            width: 1%; /* for old android */
+            height: 1rem;
+            color: #222;
+
+            @include tap-color(#FFF, .95);
+            &:not(:last-child):after {
+                @include right-line($line-color);
+            }
+            &:before {
+                @include top-line($line-color);
+            }
+        }
+        &:last-child {
+            > a:last-child,
+            > a:nth-last-child(3) {
+                font-size: .3rem;
+                color: #686868;
+                background-color: #F7F7F7;
+            }
+            > a:last-child {
+                &:after {
+                    content: '\e609';
+                    font-family: $iconfont-inlay;
+                    font-size: .6rem;
+                }
+            }
+        }
+    }
+}
+
+

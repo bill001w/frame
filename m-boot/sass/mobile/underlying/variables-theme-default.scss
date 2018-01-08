@@ -1,0 +1,182 @@
+// Color
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: (
+        100: $gray-100,
+        200: $gray-200,
+        300: $gray-300,
+        400: $gray-400,
+        500: $gray-500,
+        600: $gray-600,
+        700: $gray-700,
+        800: $gray-800,
+        900: $gray-900
+) !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$colors: (
+        blue: $blue,
+        indigo: $indigo,
+        purple: $purple,
+        pink: $pink,
+        red: $red,
+        orange: $orange,
+        yellow: $yellow,
+        green: $green,
+        teal: $teal,
+        cyan: $cyan,
+        white: $white,
+        gray: $gray-600,
+        gray-dark: $gray-800
+) !default;
+
+$theme-colors: (
+        default:$gray-600,
+        primary: $blue,
+        secondary: $gray-600,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: $gray-100,
+        dark: $gray-800
+) !default;
+
+$theme-color-interval: 8% !default;
+
+$disabled-color: $gray-600 !default;
+$disabled-bg: $white !default;
+$disabled-border-color: $gray-300 !default;
+
+$line-color: $gray-200 !default;
+$line-high-color: $gray-400 !default;
+
+//== Scaffolding
+$body-color: $gray-900 !default;
+$body-bg: $white !default;
+
+//== Grids
+$grids-line-color: $line-color !default;
+$grids-line-high-color: $line-high-color !default;
+
+//== Typography--basic
+$headings-color: inherit !default;
+$headings-small-color: $gray-700 !default;
+
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+$link-color: $blue !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-active-color: $white !default;
+$link-active-bg: $white !default;
+$link-active-hover: $white !default;
+$link-active-hover-bg: $white !default;
+
+$mark-bg: $red !default;
+$abbr-border-color: $gray-500 !default;
+$blockquote-border-color: $gray-500 !default;
+$blockquote-small-color: $gray-500 !default;
+
+//== Typography--images
+$thumbnail-bg: $body-bg !default;
+$thumbnail-border: $gray-500 !default;
+$thumbnail-caption-color: $body-color !default;
+$thumbnail-caption-padding: 0 9px !default;
+
+//== Typography--code
+$code-color: $red !default;
+$code-bg: $gray-100 !default;
+$kbd-color: $white !default;
+$kbd-bg: $gray-700 !default;
+$pre-color: $gray-800 !default;
+$pre-bg: $gray-100 !default;
+$pre-border-color: $gray-500 !default;
+
+//== Tables
+$table-bg: $body-bg !default;
+$table-bg-accent: darken($table-bg, 1) !default;
+$table-bg-hover: darken($table-bg, 1.5) !default;
+$table-bg-active: $table-bg-hover !default;
+$table-border-color: $gray-200 !default;
+
+//== Forms
+$cell-right-color: $gray-700 !default;
+
+$input-color: $gray-700 !default;
+$input-bg: $white !default;
+$input-border: rgba($black, .15) !default;
+$input-border-focus: lighten(theme-color("primary"), 25%) !default;
+$input-bg-disabled: $gray-200 !default;
+$input-color-placeholder: $gray-600 !default;
+$legend-color: $gray-700 !default;
+$legend-border-color: $gray-600 !default;
+
+//== Buttons
+$btn-link-disabled-color: $gray-200 !default;
+
+//======== 【navbar】 ========
+$navbar-height: 1.15rem !default;
+$navbar-bg: rgba(255, 255, 255, .98) !default;
+$navbar-center-width: 50% !default;
+$navbar-center-color: #5C5C5C !default;
+$navbar-item-fontsize: .3rem !default;
+$navbar-item-color: #5C5C5C !default;
+$navbar-icon-color: $navbar-item-color !default;
+$navbar-icon-fontsize: .36rem !default;
+$navbar-border-color: #B2B2B2 !default;
+
+//======== 【tabbar】 ========
+$tabbar-bg: rgba(255, 255, 255, .96) !default;
+$tabbar-border-color: #B2B2B2 !default;
+$tabbar-color: #979797 !default;
+$tabbar-color-active: #09BB07 !default;
+$tabbar-text-fontsize: .24rem !default;
+$tabbar-icon-color: $tabbar-color !default;
+$tabbar-icon-fontsize: .54rem !default;
+
+//======== 【actionsheet】 ========
+$actionsheet-bg: #EFEFF4 !default;
+$actionsheet-item-bg: #FFF !default;
+$actionsheet-item-color: #555 !default;
+$actionsheet-item-border-color: $line-color !default;
+$actionsheet-action-bg: $actionsheet-item-bg !default;
+$actionsheet-action-color: $actionsheet-item-color !default;
+
+////======== 【tab】 ========
+//$tab-bg: #FFF !default;
+//$tab-height: .85rem !default;
+//$tab-fontsize: .28rem !default;
+//$tab-color: #585858 !default;
+//$tab-color-crt: #FF5E53 !default;
+//$tab-break-color: $line-color !default;
+//$tab-bottom-border-color: $line-high-color !default;
+//
+////======== 【badge】 ========
+//$badge-default-bg: #D0D0D0 !default;
+//$badge-default-color: #FFF !default;
+//$badge-primary-bg: #04BE02 !default;
+//$badge-danger-bg: #EF4F4F !default;
+//$badge-warning-bg: #FFB400 !default;
+//$badge-hollow-bg: #FBFBFB !default;
+//$badge-hollow-color: #B2B2B2 !default;

@@ -1,0 +1,62 @@
+.panel {
+    margin-bottom: @line-height-computed;
+    // border的颜色统一设置
+    border: 1px solid transparent;
+    border-radius: @border-radius-base;
+    background-color: @panel-bg;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-heading {
+    padding: @padding-asym-base;
+    border-bottom: 1px solid transparent;
+    .border-top-radius((unit(@border-radius-base) * @font-size-base - 1));
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    // 字体大小固定
+    font-size: ceil((@font-size-base * 1.125));
+    color: inherit;
+
+    > a {
+        color: inherit;
+    }
+}
+
+.panel-body {
+    padding: @padding-asym-base;
+    &:extend(.clearfix all);
+}
+
+.panel-footer {
+    padding: @padding-asym-base;
+    background-color: @panel-footer-bg;
+    border-top: 1px solid @panel-inner-border;
+    .border-bottom-radius((unit(@border-radius-base) * @font-size-base - 1));
+}
+
+.panel-default {
+    .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border);
+}
+
+.panel-primary {
+    .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border);
+}
+
+.panel-success {
+    .panel-variant(@panel-success-border; @panel-success-text; @panel-success-heading-bg; @panel-success-border);
+}
+
+.panel-info {
+    .panel-variant(@panel-info-border; @panel-info-text; @panel-info-heading-bg; @panel-info-border);
+}
+
+.panel-warning {
+    .panel-variant(@panel-warning-border; @panel-warning-text; @panel-warning-heading-bg; @panel-warning-border);
+}
+
+.panel-danger {
+    .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border);
+}

@@ -1,0 +1,55 @@
+.img-responsive {
+    @include img-responsive();
+}
+
+.img-rounded {
+    border-radius: $border-radius-lg;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    padding: $padding-sym-sm;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $border-radius-base;
+    transition: all .2s ease-in-out;
+
+    @include img-responsive(inline-block);
+}
+
+.thumbnail {
+    display: block;
+    padding: $padding-sym-sm;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $border-radius-base;
+    transition: all .2s ease-in-out;
+
+    > img,
+    a > img {
+        // 响应式，根据宽度自适应高度
+        @extend .img-responsive;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @at-root {
+        a#{&}:hover,
+        a#{&}:focus,
+        a#{&}.active {
+            border-color: $link-color;
+        }
+    }
+
+    // 说明文字，padding略大5px，显得较窄一点
+    .caption {
+        padding: $thumbnail-caption-padding;
+        color: $thumbnail-caption-color;
+    }
+}
+

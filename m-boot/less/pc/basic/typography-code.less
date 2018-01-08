@@ -1,0 +1,53 @@
+/* 代码 */
+code,
+kbd,
+pre,
+samp {
+    font-family: @font-family-monospace;
+}
+
+code {
+    padding: @padding-sym-xs;
+    font-size: @font-size-small;
+    color: @code-color;
+    background-color: @code-bg;
+    border-radius: @border-radius-base;
+}
+
+kbd {
+    padding: @padding-sym-xs;
+    font-size: @font-size-small;
+    color: @kbd-color;
+    background-color: @kbd-bg;
+    border-radius: @border-radius-sm;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+pre {
+    display: block;
+    margin: 0 0 @margin-sm;
+    padding: @padding-sym-base;
+    line-height: @line-height-base;
+    font-size: (@font-size-base - 1); // 14px to 13px
+    border: 1px solid @pre-border-color;
+    border-radius: @border-radius-base;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: @pre-color;
+    background-color: @pre-bg;
+
+    // 保证样式一致
+    code {
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        white-space: pre-wrap;
+        background-color: transparent;
+        border-radius: 0;
+    }
+}
+
+.pre-scrollable {
+    max-height: @pre-scrollable-max-height;
+    overflow-y: scroll;
+}

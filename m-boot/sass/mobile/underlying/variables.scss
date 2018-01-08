@@ -1,0 +1,68 @@
+// Fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-xs: 12px !default;
+$font-size-sm: 14px !default;
+$font-size-base: 15px !default;
+$font-size-lg: 16px !default;
+$font-size-xl: 18px !default;
+$font-size-small: 80% !default;
+
+$font-weight-base: normal !default;
+$font-weight-bold: bold !default;
+
+// ling-height
+// 没有单位，相当于em
+$line-height-xs: 1.1 !default;
+$line-height-sm: 1.4 !default;
+$line-height-base: 1.6 !default; // 24px
+$line-height-lg: 1.8 !default;
+$line-height-xl: 2 !default;
+
+// margin
+$margin-xs: 0.125rem !default;
+$margin-sm: 0.25rem !default;
+$margin-base: 0.5rem !default;
+$margin-lg: 0.75rem !default;
+$margin-xl: 1rem !default;
+
+// padding
+$padding-sym-xs: 0.05rem !default;
+$padding-sym-sm: 0.2rem !default;
+$padding-sym-base: 0.3rem !default;
+$padding-sym-lg: 0.45rem !default;
+$padding-sym-xl: 0.75rem !default;
+
+$padding-asym-xs: 0.05rem 0.1rem !default;
+$padding-asym-sm: 0.2rem 0.4rem !default;
+$padding-asym-base: 0.3rem 0.6rem !default;
+$padding-asym-lg: 0.45rem 0.9rem !default;
+$padding-asym-xl: 0.75rem 1.5rem !default;
+
+// border-radius
+$border-radius-xs: 0.05rem !default;
+$border-radius-sm: 0.1rem !default;
+$border-radius-base: 0.15rem !default;
+$border-radius-lg: 0.2rem !default;
+$border-radius-xl: 1rem !default;
+$border-radius-circle: 50% !default;
+
+//== z-index
+$z-index-actionsheet: 1000;
+$z-index-keyboard: 1000;
+$z-index-dialog-toast: 1050;
+
+//== Grids
+$grid-columns: 5 !default;
+$grid-gutter-width: 30px !default;
+
+//== Type-basic
+
+//== Type-code
+$pre-scrollable-max-height: 340px !default;
+
+//== Forms
+$cell-icon-fontsize: 0.7rem;
+$cell-arrow-fontsize: 0.45rem;
